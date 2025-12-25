@@ -24,7 +24,7 @@ ScrollView {
     property int viewWidth
 
     background: Rectangle {
-        color: Constants.isSmallLayout ? Constants.accentColor : "transparent"
+        color: "transparent"
         radius: 12
     }
 
@@ -57,26 +57,6 @@ ScrollView {
 
                 viewHeight: 855
                 viewWidth: 1094
-            }
-        },
-        State {
-            name: "mobileLayout"
-            when: Constants.isMobileLayout
-            PropertyChanges {
-                target: root
-
-                viewHeight: 794
-                viewWidth: 327
-            }
-        },
-        State {
-            name: "smallLayout"
-            when: Constants.isSmallLayout
-            PropertyChanges {
-                target: root
-
-                viewHeight: 330
-                viewWidth: 400
             }
         }
     ]

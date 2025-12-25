@@ -84,19 +84,6 @@ Switch {
                 separatorEndPos: 35
                 separatorHeight: 9
             }
-        },
-        State {
-            name: "smallLayout"
-            when: Constants.isSmallLayout || Constants.isMobileLayout
-            PropertyChanges {
-                target: internal
-                circleSize: 12
-                indicatorWidth: 35
-                indicatorHeight: 15
-                separatorStartPos: 12
-                separatorEndPos: 22
-                separatorHeight: 6
-            }
         }
     ]
 }

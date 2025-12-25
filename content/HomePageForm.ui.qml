@@ -37,10 +37,10 @@ Page {
                 id: themeTapButton
 
                 source: "images/theme.svg"
-                sourceSize.height: Constants.isSmallLayout ? 15 : 20
-                sourceSize.width: Constants.isSmallLayout ? 15 : 20
-                Layout.rightMargin: Constants.isSmallLayout ? 5 : 19
-                visible: Constants.isSmallLayout || Constants.isMobileLayout
+                sourceSize.height: 20
+                sourceSize.width: 20
+                Layout.rightMargin: 19
+                visible: false
 
                 TapHandler {
                     onTapped: AppSettings.isDarkTheme = !AppSettings.isDarkTheme
@@ -113,33 +113,6 @@ Page {
 
     states: [
         State {
-            name: "mobileLayout"
-            when: Constants.isMobileLayout
-
-            PropertyChanges {
-                target: sideMenu
-                visible: false
-            }
-            PropertyChanges {
-                target: bottomMenu
-                visible: true
-            }
-            PropertyChanges {
-                target: stackView
-                anchors.leftMargin: 0
-            }
-
-            PropertyChanges {
-                target: toolBar
-                height: 39
-            }
-            AnchorChanges {
-                target: stackView
-                anchors.left: parent.left
-                anchors.bottom: bottomMenu.top
-            }
-        },
-        State {
             name: "desktopLayout"
             when: Constants.isBigDesktopLayout || Constants.isSmallDesktopLayout
 
@@ -160,34 +133,6 @@ Page {
             PropertyChanges {
                 target: toolBar
                 height: 40
-            }
-            AnchorChanges {
-                target: stackView
-                anchors.left: sideMenu.right
-                anchors.bottom: parent.bottom
-            }
-        },
-        State {
-            name: "smallLayout"
-            when: Constants.isSmallLayout
-
-            PropertyChanges {
-                target: sideMenu
-                visible: true
-                anchors.topMargin: 30
-            }
-            PropertyChanges {
-                target: bottomMenu
-                visible: false
-            }
-            PropertyChanges {
-                target: stackView
-                anchors.leftMargin: 5
-            }
-
-            PropertyChanges {
-                target: toolBar
-                height: 24
             }
             AnchorChanges {
                 target: stackView

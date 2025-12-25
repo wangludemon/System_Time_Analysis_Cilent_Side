@@ -328,62 +328,6 @@ Pane {
                 target: root
                 leftPadding: 27
             }
-        },
-        State {
-            name: "mobileLayout"
-            when: Constants.isMobileLayout
-            PropertyChanges {
-                target: heading
-                text: qsTr("虚拟机概况")
-                font: Constants.mobileTitleFont
-            }
-            PropertyChanges {
-                target: scrollView
-                visible: true
-            }
-            PropertyChanges {
-                target: swipeView
-                visible: false
-            }
-            PropertyChanges {
-                target: internal
-                delegatePreferredHeight: 215
-                delegatePreferredWidth: 306
-            }
-            PropertyChanges {
-                target: root
-                leftPadding: 27
-            }
-        },
-        State {
-            name: "smallLayout"
-            when: Constants.isSmallLayout
-            PropertyChanges {
-                target: heading
-                text: qsTr("虚拟机概况")
-                font: Constants.smallTitleFont
-            }
-            PropertyChanges {
-                target: heading2
-                visible: false
-            }
-            PropertyChanges {
-                target: scrollView
-                visible: false
-            }
-            PropertyChanges {
-                target: swipeView
-                visible: true
-            }
-            PropertyChanges {
-                target: internal
-                delegatePreferredHeight: 215
-                delegatePreferredWidth: 340
-            }
-            PropertyChanges {
-                target: root
-                leftPadding: 11
-            }
         }
     ]
 }

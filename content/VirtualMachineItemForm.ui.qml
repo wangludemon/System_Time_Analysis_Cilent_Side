@@ -18,8 +18,6 @@ import VirtualMachine
 Pane {
     id: root
 
-    property bool isSmallLayout: false
-
     property alias isEnabled: toggle.checked
     property alias toggle: toggle
 
@@ -90,7 +88,7 @@ Pane {
 
             Label {
                 text: root.name
-                font.pixelSize: !root.isSmallLayout ? 24 : 18
+                font.pixelSize: 24
                 font.weight: 600
                 font.family: "Titillium Web"
                 color: Constants.primaryTextColor
@@ -120,7 +118,7 @@ Pane {
         anchors.left: parent.left
         anchors.leftMargin: internal.columnMargin
         anchors.top: header.bottom
-        anchors.topMargin: !root.isSmallLayout ? 10 : 8
+        anchors.topMargin: 10
 
         Repeater {
             model: [qsTr("CPU数量: %1".arg(root.cpuNum)),
@@ -131,7 +129,7 @@ Pane {
 
             Label {
                 text: modelData
-                font.pixelSize: !root.isSmallLayout ? 14 : 12
+                font.pixelSize: 14
                 font.weight: 400
                 font.family: "Titillium Web"
                 color: toggle.checked ? Constants.primaryTextColor : "#898989"
@@ -191,7 +189,7 @@ Pane {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        anchors.rightMargin: !root.isSmallLayout ? 24 : 0
+        anchors.rightMargin: 24
 
         Repeater {
             model: roomOptions
@@ -203,7 +201,7 @@ Pane {
                 Layout.fillHeight: true
 
                 isEnabled: root.isEnabled
-                isSmallLayout: root.isSmallLayout
+
                 isActive: isMVM ? false: (root.model.mode === roomOption.name)
                 vmName: root.name
                 vmId: root.vmId
@@ -226,16 +224,16 @@ Pane {
         }
 
         Item {
-            Layout.preferredWidth: !root.isSmallLayout ? 24 : 20
-            Layout.preferredHeight: !root.isSmallLayout ? 24 : 20
+            Layout.preferredWidth: 24
+            Layout.preferredHeight: 24
             Layout.alignment: Qt.AlignBottom
-            Layout.bottomMargin: !root.isSmallLayout ? 19 : 7
+            Layout.bottomMargin: 19
 
             Image {
                 id: icon2
 
                 source: "images/more.svg"
-                sourceSize.width: !root.isSmallLayout ? 24 : 20
+                sourceSize.width: 24
             }
 
             MultiEffect {
@@ -298,10 +296,7 @@ Pane {
         State {
             name: "desktopLayout"
             when: Constants.isBigDesktopLayout || Constants.isSmallDesktopLayout
-            PropertyChanges {
-                target: root
-                isSmallLayout: false
-            }
+
             PropertyChanges {
                 target: internal
                 width: 530
@@ -312,46 +307,6 @@ Pane {
                 titleSpacing: 8
                 columnMargin: 7
                 iconSize: 34
-                switchMargin: 9
-            }
-        },
-        State {
-            name: "mobileLayout"
-            when: Constants.isMobileLayout
-            PropertyChanges {
-                target: internal
-                width: 306
-                height: 215
-                rightMargin: 12
-                leftPadding: 8
-                spacing: 6
-                titleSpacing: 4
-                columnMargin: 17
-                iconSize: 24
-                switchMargin: 2
-            }
-            PropertyChanges {
-                target: root
-                isSmallLayout: true
-            }
-        },
-        State {
-            name: "smallLayout"
-            when: Constants.isSmallLayout
-            PropertyChanges {
-                target: root
-                isSmallLayout: true
-            }
-            PropertyChanges {
-                target: internal
-                width: 340
-                height: 215
-                rightMargin: 34
-                leftPadding: 8
-                spacing: 3
-                titleSpacing: 2
-                columnMargin: 7
-                iconSize: 24
                 switchMargin: 9
             }
         }

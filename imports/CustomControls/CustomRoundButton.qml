@@ -24,7 +24,7 @@ RoundButton {
     icon.color: (control.checked || control.pressed) && control.enabled ? "#FFFFFF" : control.contentColor
 
     palette.buttonText: control.pressed ? "#FFFFFF" : control.contentColor
-    display: Constants.isSmallLayout ? AbstractButton.IconOnly : AbstractButton.TextBesideIcon
+    display: AbstractButton.TextBesideIcon
     checkable: true
     radius: 20
 

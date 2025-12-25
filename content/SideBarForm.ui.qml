@@ -61,9 +61,9 @@ Column {
 
             background: Rectangle {
                 color: active ? "#2CDE85" : "transparent"
-                radius: Constants.isSmallLayout ? 4 : 12
+                radius: 12
                 anchors.fill: parent
-                opacity: Constants.isSmallLayout ? 0.3 : 0.1
+                opacity: 0.1
             }
 
             Column {
@@ -75,7 +75,7 @@ Column {
                     width: internal.delegateWidth
                     height: internal.delegateHeight
                     
-                    visible: Constants.isSmallLayout == false
+                    visible: true
 
                     RowLayout {
                         anchors.fill: parent
@@ -204,21 +204,6 @@ Column {
                 rightMargin: 0
                 leftPadding: 5
                 spacing: 5
-            }
-        },
-        State {
-            name: "small"
-            when: Constants.isSmallLayout
-            PropertyChanges {
-                target: internal
-                delegateWidth: 24
-                delegateHeight: 24
-                iconWidth: 24
-                isNameVisible: false
-                leftMargin: 0
-                rightMargin: 0
-                leftPadding: 6
-                spacing: 12
             }
         }
     ]

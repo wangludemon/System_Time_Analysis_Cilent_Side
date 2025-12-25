@@ -12,20 +12,8 @@ QtObject {
 
     property bool isBigDesktopLayout: true
     property bool isSmallDesktopLayout: false
-    property bool isMobileLayout: false
-    property bool isSmallLayout: false
 
-    readonly property font smallTitleFont: Qt.font({
-            "family": "Inter",
-            "pixelSize": 14,
-            "weight": 700
-        })
 
-    readonly property font mobileTitleFont: Qt.font({
-            "family": "Titillium Web",
-            "pixelSize": 24,
-            "weight": 600
-        })
 
     readonly property font desktopTitleFont: Qt.font({
             "family": "Titillium Web",

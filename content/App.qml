@@ -28,11 +28,5 @@ Window {
         Constants.isSmallDesktopLayout = Qt.binding( function(){
             return window.width >= 647 && window.width < Constants.width && window.width >= window.height
         })
-        Constants.isMobileLayout = Qt.binding( function(){
-            return window.width < window.height
-        })
-        Constants.isSmallLayout = Qt.binding( function(){
-            return window.width < 647 && window.width >= window.height
-        })
     }
 }

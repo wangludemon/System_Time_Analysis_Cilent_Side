@@ -85,50 +85,6 @@ Pane {
                 target: scrollView
                 visible: true
             }
-        },
-        State {
-            name: "mobileLayout"
-            when: Constants.isMobileLayout
-            PropertyChanges {
-                target: header
-                font.pixelSize: 24
-                font.weight: 600
-                font.family: "Titillium Web"
-            }
-            PropertyChanges {
-                target: root
-                leftPadding: 16
-                rightPadding: 16
-            }
-            PropertyChanges {
-                target: scrollView
-                visible: false
-            }
-            PropertyChanges {
-                target: swipeView
-                visible: true
-            }
-        },
-        State {
-            name: "smallLayout"
-            when: Constants.isSmallLayout
-            PropertyChanges {
-                target: header
-                visible: false
-            }
-            PropertyChanges {
-                target: root
-                leftPadding: 15
-                rightPadding: 15
-            }
-            PropertyChanges {
-                target: scrollView
-                visible: false
-            }
-            PropertyChanges {
-                target: swipeView
-                visible: true
-            }
         }
     ]
 }

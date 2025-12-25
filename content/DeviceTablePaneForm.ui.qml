@@ -78,38 +78,6 @@ Pane {
                 headerSpacing: 24
                 headerSize: 24
             }
-        },
-        State {
-            name: "mobileLayout"
-            when: Constants.isMobileLayout
-            PropertyChanges {
-                target: internal
-                buttonHeight: 50
-                buttonWidth: 110
-                radius: 12
-                leftMargin: 16
-                topMargin: 16
-                iconSize: 24
-                optionIconSize: 30
-                headerSpacing: 16
-                headerSize: 18
-            }
-        },
-        State {
-            name: "smallLayout"
-            when: Constants.isSmallLayout
-            PropertyChanges {
-                target: internal
-                buttonHeight: 42
-                buttonWidth: 42
-                radius: 21
-                leftMargin: 14
-                topMargin: 11
-                iconSize: 24
-                optionIconSize: 24
-                headerSpacing: 12
-                headerSize: 18
-            }
         }
     ]
 }
