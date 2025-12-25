@@ -72,7 +72,7 @@ void NetworkManager::processGrpcReply(SnapshotReply& reply)
     qDebug() << "vms size:" << QString::fromStdString(std::to_string(vms.size())) << "\n";
 
     deviceInfoList.clear();
-    //virtualMachineInfoList.clear();
+    
     string vmName;
     int deviceId = 0;
     int usedCpu = 0;

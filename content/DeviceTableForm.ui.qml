@@ -20,16 +20,6 @@ Pane {
         TableModelColumn { display: "whoUsed" }
 
         rows: []
-        /*
-            { id: "002", name: "串口(serial@feb50000)", status: "就绪 (READY)", whoUsed: "Zephyr" },
-            { id: "003", name: "系统控制寄存器(syscon@fd5b0000)", status: "就绪 (READY)", whoUsed: "openEuler" },
-            { id: "004", name: "系统控制寄存器(syscon@fd58c000)", status: "就绪 (READY)", whoUsed: "openEuler" },
-            { id: "005", name: "虚拟块设备 (VIRTIOBLK)", status: "就绪 (READY)", whoUsed: "Zephyr" },
-            { id: "006", name: "虚拟网络设备 (VIRTIONET)", status: "就绪 (READY)", whoUsed: "Zephyr" },
-            { id: "007", name: "网口", status: "就绪 (READY)", whoUsed: "Zephyr" },
-            { id: "008", name: "时钟", status: "就绪 (READY)", whoUsed: "Zephyr" },
-            { id: "008", name: "串口2(serial@feb50000)", status: "就绪 (READY)", whoUsed: "openEuler" }
-        */
     }
 
     function updateTableModelData() {
@@ -66,21 +56,19 @@ Pane {
 
     // 当页面加载完成时执行初始化操作
     Component.onCompleted: {
-        // 方法1：如果networkManager提供了Q_INVOKABLE方法
-        //root.cpuUtilizationRate = networkManager.rustShyperInfo.cpuUtilizationRate;
-        //root.memUtilizationRate = networkManager.rustShyperInfo.memUtilizationRate;
+        
 
         console.log("on Component.onCompleted:\r\n rustShyperInfo.cpuUtilizationRate:", networkManager.rustShyperInfo.cpuUtilizationRate);
         root.deviceInfoList = networkManager.rustShyperInfo.deviceInfoList;
         updateTableModelData();
         console.log("初始化数据读取完毕。root.deviceInfoList:", root.deviceInfoList);
-        //console.log("初始化数据读取完毕。memUtilizationRate:", memUtilizationRate);
+        
     }
 
     // 主背景
     Rectangle {
         anchors.fill: parent
-        //color: "#B8F6D5"
+        
         color: AppSettings.isDarkTheme ?  "#2CDE85" : "#B8F6D5"
         radius: 12
 
@@ -129,8 +117,7 @@ Pane {
                             color: "transparent"
                             border.color: AppSettings.isDarkTheme ? "#000000" : "#dee2e6"
                             border.width: 0
-                            //border.rightWidth: 1
-                            //border.bottomWidth: 1
+                            
 
                             Text {
                                 anchors.centerIn: parent

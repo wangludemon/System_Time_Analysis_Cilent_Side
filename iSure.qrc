@@ -8,61 +8,17 @@
     <file>content/DeviceTableForm.ui.qml</file>
     <file>content/HomePage.qml</file>
     <file>content/HomePageForm.ui.qml</file>
-    <file>content/images/ArceOS.svg</file>
     <file>content/images/arrow.svg</file>
-    <file>content/images/bedroom.svg</file>
     <file>content/images/circle.svg</file>
-    <file>content/images/edit.svg</file>
     <file>content/images/home.svg</file>
-    <file>content/images/kid_room.svg</file>
-    <file>content/images/kitchen.svg</file>
-    <file>content/images/linux.svg</file>
-    <file>content/images/living_room.svg</file>
-    <file>content/images/logo.png</file>
-    <file>content/images/more.svg</file>
-    <file>content/images/openEuler.png</file>
-    <file>content/images/openEuler.svg</file>
-    <file>content/images/settings.svg</file>
-    <file>content/images/start.svg</file>
-    <file>content/images/stats.svg</file>
-    <file>content/images/sylix.svg</file>
-    <file>content/images/temperature.svg</file>
-    <file>content/images/theme.svg</file>
-    <file>content/images/thermostat.svg</file>
-    <file>content/images/ubuntu.png</file>
-    <file>content/images/ubuntu.svg</file>
-    <file>content/images/up.svg</file>
-    <file>content/images/Zephyr.svg</file>
-    <file>content/VirtualMachineItem.qml</file>
-    <file>content/VirtualMachineItemForm.ui.qml</file>
-    <file>content/VirtualMachineOption.qml</file>
-    <file>content/VirtualMachineOptionForm.ui.qml</file>
-    <file>content/VirtualMachineScrollView.qml</file>
-    <file>content/VirtualMachineScrollViewForm.ui.qml</file>
-    <file>content/VirtualMachineSwipeView.qml</file>
-    <file>content/VirtualMachineSwipeViewForm.ui.qml</file>
-    <file>content/VirtualMachineView.qml</file>
-    <file>content/VirtualMachineViewForm.ui.qml</file>
-    <file>content/SettingsView.qml</file>
-    <file>content/SettingsViewForm.ui.qml</file>
-    <file>content/SideBar.qml</file>
-    <file>content/SideBarForm.ui.qml</file>
-    <file>content/HostResourceInfo.qml</file>
-    <file>content/CreateVmDialog.qml</file>
-    <file>content/DeviceScrollView.qml</file>
-    <file>content/DeviceScrollViewForm.ui.qml</file>
-    <file>content/SystemSettings.qml</file>
-    <file>content/SystemSettingsForm.ui.qml</file>
-    <file>content/DeviceStackView.qml</file>
-    <file>content/DeviceStackViewForm.ui.qml</file>
-    <file>content/DeviceSwipeView.qml</file>
-    <file>content/DeviceSwipeViewForm.ui.qml</file>
+    
+    
     <file>content/DeviceManagementView.qml</file>
     <file>content/DeviceManagementViewForm.ui.qml</file>
     <file>imports/VirtualMachine/AppSettings.qml</file>
     <file>imports/VirtualMachine/Constants.qml</file>
     <file>imports/VirtualMachine/qmldir</file>
-    <file>imports/VirtualMachine/RoomsModel.qml</file>
+    
 <file>imports/CustomControls/CustomRoundButton.qml</file>
         <file>imports/CustomControls/CustomSwitch.qml</file>
         <file>imports/CustomControls/qmldir</file>
