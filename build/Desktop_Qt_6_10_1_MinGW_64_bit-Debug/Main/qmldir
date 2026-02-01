@@ -1,0 +1,6 @@
+module Main
+typeinfo iSure.qmltypes
+prefer :/qt/qml/Main/
+Main 1.0 Main.qml
+depends QtQuick
+

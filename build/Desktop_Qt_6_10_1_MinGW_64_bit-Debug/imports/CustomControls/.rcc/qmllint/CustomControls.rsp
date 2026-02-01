@@ -1,0 +1,11 @@
+--bare
+-I
+E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports
+-I
+D:/Qt/6.10.1/mingw_64/qml
+--resource
+E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/CustomControls/.qt/rcc/qmake_CustomControls.qrc
+--resource
+E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/CustomControls/.qt/rcc/CustomControls_raw_qml_0.qrc
+E:/iSurePro/iSure/imports/CustomControls/CustomRoundButton.qml
+E:/iSurePro/iSure/imports/CustomControls/CustomSwitch.qml

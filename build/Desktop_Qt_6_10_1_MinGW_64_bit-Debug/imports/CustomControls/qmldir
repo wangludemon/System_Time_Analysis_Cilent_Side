@@ -1,0 +1,9 @@
+module CustomControls
+linktarget CustomControlsplugin
+optional plugin CustomControlsplugin
+classname CustomControlsPlugin
+typeinfo CustomControls.qmltypes
+prefer :/qt/qml/CustomControls/
+CustomRoundButton 1.0 CustomRoundButton.qml
+CustomSwitch 1.0 CustomSwitch.qml
+

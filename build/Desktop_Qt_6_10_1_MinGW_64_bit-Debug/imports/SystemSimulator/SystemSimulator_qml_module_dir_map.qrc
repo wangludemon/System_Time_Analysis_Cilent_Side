@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/SystemSimulator">E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator</file>
+
+  </qresource>
+</RCC>

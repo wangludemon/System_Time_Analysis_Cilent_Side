@@ -1,15 +1,22 @@
-
 #include <iostream>
 #include <string>
 #include <set>
+
+// MOD-1: gRPC 相关 include 只在 USE_GRPC=1 时启用
+#if USE_GRPC
 #include <grpcpp/grpcpp.h>
+#include "shyper.grpc.pb.h"
+#endif
+
 #include "NetworkManager.h"
 #include "RustShyperInfo.h"
-#include "shyper.grpc.pb.h"
 
+// MOD-2: gRPC 的 using 也要放进条件里，避免 USE_GRPC=0 时找不到符号
+#if USE_GRPC
 using grpc::CreateChannel;
 using grpc::InsecureChannelCredentials;
 using namespace shyper;
+#endif
 
 NetworkManager::NetworkManager(QObject *parent)
     : QObject(parent)
@@ -35,30 +42,34 @@ NetworkManager::NetworkManager(QObject *parent)
 
 void NetworkManager::connectToServer(const QString &ipAddress)
 {
-    // 这里添加实际的网络连接逻辑
     qDebug() << "Attempting to connect to IP:" << ipAddress;
-    QString errorMsg = "Connection timed out"; // 替换为具体的错误信息
-    bool connectResult;
 
     // 示例：简单的IP地址格式验证
     QRegularExpression ipRegex("^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
     QRegularExpressionMatch match = ipRegex.match(ipAddress);
-    if (match.hasMatch()) {
-        qDebug() << "IP address format is valid. Proceeding with connection...";
-
-        connectResult = connectGrpc(ipAddress.toStdString());
-
-        if (connectResult) {
-            emit connectionSuccess(); // 发出成功信号
-        } else {
-            emit connectionFailed(errorMsg); // 发出失败信号，可携带错误信息
-        }
-    } else {
+    if (!match.hasMatch()) {
         qDebug() << "Invalid IP address format!";
-        errorMsg = "Invalid IP address format!";
-        emit connectionFailed(errorMsg);
+        emit connectionFailed("Invalid IP address format!");
+        return;
     }
+
+#if USE_GRPC
+    qDebug() << "IP address format is valid. Proceeding with gRPC connection...";
+    const bool connectResult = connectGrpc(ipAddress.toStdString());
+    if (connectResult) {
+        emit connectionSuccess();
+    } else {
+        emit connectionFailed("Connection failed");
+    }
+#else
+    // MOD-3: gRPC 关闭时的占位行为：直接提示不可用
+    qDebug() << "gRPC is disabled (USE_GRPC=0).";
+    emit connectionFailed("gRPC is disabled (USE_GRPC=0).");
+#endif
 }
+
+#if USE_GRPC
+// ======================= gRPC ENABLED IMPLEMENTATION =======================
 
 void NetworkManager::processGrpcReply(SnapshotReply& reply)
 {
@@ -72,7 +83,7 @@ void NetworkManager::processGrpcReply(SnapshotReply& reply)
     qDebug() << "vms size:" << QString::fromStdString(std::to_string(vms.size())) << "\n";
 
     deviceInfoList.clear();
-    
+
     string vmName;
     int deviceId = 0;
     int usedCpu = 0;
@@ -119,9 +130,8 @@ void NetworkManager::processGrpcReply(SnapshotReply& reply)
         cpuBitMap = vms[i].allocate_bitmap();
 
         string cpuBitMapStr = cpuBitMap ? std::string(std::bitset<32>(cpuBitMap).to_string().substr(
-            std::bitset<32>(cpuBitMap).to_string().find('1'))) : "0";
+                                              std::bitset<32>(cpuBitMap).to_string().find('1'))) : "0";
         virtualMachineInfo->setCpuID(QString::fromStdString(cpuBitMapStr));
-
 
         while(cpuBitMap != 0) {
             usedCpu += (cpuBitMap&1);
@@ -179,7 +189,6 @@ void NetworkManager::processGrpcReply(SnapshotReply& reply)
     }
     qDebug() << "memTotalSize:" << QString::fromStdString(std::to_string(memTotalSize)) <<"; " << QString::fromStdString(std::to_string(memTotalSize/1024/1024/1024.0)) << "GB\n";
 
-
     string cpuInfo = "CPU核心数：";
     string memInfo = "内存大小：";
     rustShyperInfo.setCpuUtilizationRate((usedCpu*100)/hypervisorInfo.phys_cpu_num());
@@ -189,7 +198,9 @@ void NetworkManager::processGrpcReply(SnapshotReply& reply)
     rustShyperInfo.setBoard(QString::fromStdString("开发板：ROC_RK3588s_PC"));
     rustShyperInfo.setCpuInfo(QString::fromStdString(cpuInfo.append(std::to_string(hypervisorInfo.phys_cpu_num())).append("(CORTEX_A55, CORTEX_A76)")));
     rustShyperInfo.setMemoryInfo(QString::fromStdString(memInfo.append(std::to_string(memTotalSize/1024/1024/1024.0)).append(" GB")));
-    qDebug() << "about to emit rustShyperInfoUpdate, DeviceInfoList length:" << deviceInfoList.length() << "; usedCpu:" << usedCpu << "; CpuUtilizationRate:" << rustShyperInfo.getCpuUtilizationRate() << "; usedMem:" << usedMem << "; MemUtilizationRate:" << rustShyperInfo.getMemUtilizationRate();
+    qDebug() << "about to emit rustShyperInfoUpdate, DeviceInfoList length:" << deviceInfoList.length()
+             << "; usedCpu:" << usedCpu << "; CpuUtilizationRate:" << rustShyperInfo.getCpuUtilizationRate()
+             << "; usedMem:" << usedMem << "; MemUtilizationRate:" << rustShyperInfo.getMemUtilizationRate();
     emit rustShyperInfoUpdate(rustShyperInfo);
 }
 
@@ -251,10 +262,9 @@ void NetworkManager::vmOperate(const int vmId, const QString &operateType)
 
 void NetworkManager::createVm(const QString &vmName, const QString &osType, int cpuCores, qint64 memorySize)
 {
-    qDebug() << "in NetworkManager::createVm; vmName:" << vmName << "; osType:" << osType 
+    qDebug() << "in NetworkManager::createVm; vmName:" << vmName << "; osType:" << osType
              << "; cpuCpus:" << cpuCores << "; memorySize:" << memorySize;
 
-    // 检查stub是否已初始化
     if (!stub) {
         qDebug() << "Error: stub is not initialized. Please connect to server first.";
         emit createVmFailed("网络连接未建立，请先连接服务器");
@@ -262,7 +272,7 @@ void NetworkManager::createVm(const QString &vmName, const QString &osType, int 
     }
 
     CreateVmRequest req;
-    
+
     try {
         std::string vmNameStr = vmName.toUtf8().constData();
         req.set_vm_name(vmNameStr);
@@ -271,7 +281,7 @@ void NetworkManager::createVm(const QString &vmName, const QString &osType, int 
         emit createVmFailed(QString("虚拟机名称转换失败: %1").arg(e.what()));
         return;
     }
-    
+
     try {
         std::string osTypeStr = osType.toUtf8().constData();
         req.set_os_type(osTypeStr);
@@ -280,7 +290,7 @@ void NetworkManager::createVm(const QString &vmName, const QString &osType, int 
         emit createVmFailed(QString("操作系统类型转换失败: %1").arg(e.what()));
         return;
     }
-    
+
     req.set_cpu_cores(cpuCores);
     req.set_memory_size(memorySize);
 
@@ -290,15 +300,14 @@ void NetworkManager::createVm(const QString &vmName, const QString &osType, int 
 
     if (status.ok() && reply.success()) {
         qDebug() << "in NetworkManager::createVm; reply.success; vm_id:" << reply.vm_info().id();
-        // 将VmInfo转换为VirtualMachineInfo
+
         VirtualMachineInfo newVmInfo;
         newVmInfo.setId(reply.vm_info().id());
         newVmInfo.setName(QString::fromStdString(reply.vm_info().name()));
         newVmInfo.setType(QString::fromStdString(reply.vm_info().vm_type()));
         newVmInfo.setVmState(QString::fromStdString(reply.vm_info().vm_state()));
         newVmInfo.setBelongOS(QString::fromStdString(reply.vm_info().vm_type()));
-        // 可以根据需要设置更多属性
-        
+
         emit createVmSuccess(newVmInfo);
     } else {
         QString errorMsg;
@@ -312,18 +321,13 @@ void NetworkManager::createVm(const QString &vmName, const QString &osType, int 
     }
 }
 
-
-
 bool NetworkManager::connectGrpc(string ip)
 {
     ip.append(":50051");
-    // 创建 gRPC 通道
     auto channel = CreateChannel(ip, InsecureChannelCredentials());
     stub = ShyperService::NewStub(channel);
 
-    // 构造请求
     SnapshotRequest req;
-
     SnapshotReply reply;
     grpc::ClientContext ctx;
     grpc::Status status = stub->GetSnapshot(&ctx, req, &reply);
@@ -335,5 +339,27 @@ bool NetworkManager::connectGrpc(string ip)
         qDebug() << "RPC failed:" << status.error_message();
         return false;
     }
-    return true;
 }
+
+#else
+// ======================= gRPC DISABLED STUBS =======================
+// MOD-4: USE_GRPC=0 时提供空实现，确保能编译且 QML 调用有反馈
+
+void NetworkManager::vmOperate(const int vmId, const QString &operateType)
+{
+    Q_UNUSED(vmId);
+    qDebug() << "vmOperate called but gRPC is disabled. operateType =" << operateType;
+    emit vmOperateFailed(vmId, vmId, operateType);
+}
+
+void NetworkManager::createVm(const QString &vmName, const QString &osType, int cpuCores, qint64 memorySize)
+{
+    Q_UNUSED(vmName);
+    Q_UNUSED(osType);
+    Q_UNUSED(cpuCores);
+    Q_UNUSED(memorySize);
+    qDebug() << "createVm called but gRPC is disabled.";
+    emit createVmFailed("gRPC is disabled (USE_GRPC=0).");
+}
+
+#endif

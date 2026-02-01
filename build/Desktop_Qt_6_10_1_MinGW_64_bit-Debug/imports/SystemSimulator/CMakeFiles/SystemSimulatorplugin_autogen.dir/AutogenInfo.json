@@ -1,0 +1,143 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/SystemSimulatorplugin_autogen",
+	"CMAKE_BINARY_DIR" : "E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/iSurePro/iSure/imports/SystemSimulator",
+	"CMAKE_EXECUTABLE" : "D:/Qt/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"E:/iSurePro/iSure/imports/SystemSimulator/CMakeLists.txt",
+		"D:/Qt/6.10.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
+		"D:/Qt/6.10.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp",
+		"D:/Qt/6.10.1/mingw_64/lib/cmake/Qt6Qml/Qt6QmlPluginTemplate.cpp.in",
+		"D:/Qt/6.10.1/mingw_64/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in",
+		"D:/Qt/6.10.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
+		"D:/Qt/6.10.1/mingw_64/lib/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp",
+		"D:/Qt/6.10.1/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/SystemSimulatorplugin_SystemSimulatorPlugin_in.cpp"
+	],
+	"CMAKE_SOURCE_DIR" : "E:/iSurePro/iSure",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/SystemSimulatorplugin_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "SystemSimulatorplugin_autogen/timestamp",
+	"HEADERS" : [],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/SystemSimulatorplugin_autogen/include",
+	"MOC_COMPILATION_FILE" : "E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/SystemSimulatorplugin_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"MINGW_HAS_SECURE_API=1",
+		"QT_CORE_LIB",
+		"QT_DEPRECATED_WARNINGS",
+		"QT_NETWORK_LIB",
+		"QT_PLUGIN",
+		"QT_QMLINTEGRATION_LIB",
+		"QT_QML_LIB",
+		"QT_STATICPLUGIN",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_UNICODE",
+		"_WIN64"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/Qt/6.10.1/mingw_64/include/QtQml",
+		"D:/Qt/6.10.1/mingw_64/include",
+		"D:/Qt/6.10.1/mingw_64/include/QtCore",
+		"D:/Qt/6.10.1/mingw_64/mkspecs/win32-g++",
+		"D:/Qt/6.10.1/mingw_64/include/QtQmlIntegration",
+		"D:/Qt/6.10.1/mingw_64/include/QtNetwork",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+		"D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [ "-Muri=SystemSimulator", "-DWIN32" ],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"D:/Qt/Tools/mingw1310_64/bin/g++.exe",
+		"-dM",
+		"-E",
+		"-c",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/SystemSimulatorplugin_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : 
+	[
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.qt/rcc/qrc_SystemSimulator_raw_qml_0.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.qt/rcc/qrc_SystemSimulator_raw_qml_0_init.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.qt/rcc/qrc_qmake_SystemSimulator.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.qt/rcc/qrc_qmake_SystemSimulator_init.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_ConfigDialog_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_GridCell_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_RtaAnalysisPage_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_RtaPage_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_RtaParamPage_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_SimulatorPage_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_StyledButton_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_qmlcache_loader.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/SystemSimulator_autogen/mocs_compilation.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/systemsimulator_qmltyperegistrations.cpp"
+	],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 10,
+	"PARSE_CACHE_FILE" : "E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/CMakeFiles/SystemSimulatorplugin_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/Qt/6.10.1/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/Qt/6.10.1/mingw_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 10,
+	"SETTINGS_FILE" : "E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/CMakeFiles/SystemSimulatorplugin_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/SystemSimulatorplugin_SystemSimulatorPlugin.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : 
+	[
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.qt/rcc/qrc_SystemSimulator_raw_qml_0.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.qt/rcc/qrc_SystemSimulator_raw_qml_0_init.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.qt/rcc/qrc_qmake_SystemSimulator.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.qt/rcc/qrc_qmake_SystemSimulator_init.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_ConfigDialog_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_GridCell_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_RtaAnalysisPage_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_RtaPage_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_RtaParamPage_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_SimulatorPage_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_StyledButton_qml.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/.rcc/qmlcache/SystemSimulator_qmlcache_loader.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/SystemSimulator_autogen/mocs_compilation.cpp",
+		"E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/SystemSimulator/systemsimulator_qmltyperegistrations.cpp"
+	],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

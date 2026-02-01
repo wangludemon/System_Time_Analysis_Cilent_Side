@@ -1,0 +1,15 @@
+module SystemSimulator
+linktarget SystemSimulatorplugin
+optional plugin SystemSimulatorplugin
+classname SystemSimulatorPlugin
+typeinfo SystemSimulator.qmltypes
+prefer :/qt/qml/SystemSimulator/
+SimulatorPage 1.0 SimulatorPage.qml
+RtaPage 1.0 RtaPage.qml
+RtaParamPage 1.0 RtaParamPage.qml
+RtaAnalysisPage 1.0 RtaAnalysisPage.qml
+ConfigDialog 1.0 ConfigDialog.qml
+GridCell 1.0 GridCell.qml
+StyledButton 1.0 StyledButton.qml
+depends QtQuick
+

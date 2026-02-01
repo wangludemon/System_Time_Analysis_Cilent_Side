@@ -1,0 +1,7 @@
+
+set(target "iSure")
+set(working_dir "E:/iSurePro/iSure")
+set(src_and_dest_list
+
+)
+set(timestamp_file "E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/.qt/iSure_res.txt")

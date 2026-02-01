@@ -1,0 +1,119 @@
+{
+    "classes": [
+        {
+            "className": "RustShyperInfo",
+            "gadget": true,
+            "lineNumber": 9,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 11,
+                    "name": "cpuUtilizationRate",
+                    "read": "getCpuUtilizationRate",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setCpuUtilizationRate"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 12,
+                    "name": "memUtilizationRate",
+                    "read": "getMemUtilizationRate",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setMemUtilizationRate"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "lineNumber": 14,
+                    "name": "deviceInfoList",
+                    "read": "getDeviceInfoList",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QList<DeviceInfo>",
+                    "user": false,
+                    "write": "setDeviceInfoList"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "lineNumber": 15,
+                    "name": "virtualMachineInfoList",
+                    "read": "getVirtualMachineInfoList",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QList<VirtualMachineInfo>",
+                    "user": false,
+                    "write": "setVirtualMachineInfoList"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "lineNumber": 16,
+                    "name": "board",
+                    "read": "getBoard",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setBoard"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "lineNumber": 17,
+                    "name": "cpuInfo",
+                    "read": "getCpuInfo",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setCpuInfo"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "lineNumber": 18,
+                    "name": "memoryInfo",
+                    "read": "getMemoryInfo",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setMemoryInfo"
+                }
+            ],
+            "qualifiedClassName": "RustShyperInfo"
+        }
+    ],
+    "inputFile": "RustShyperInfo.h",
+    "outputRevision": 69
+}

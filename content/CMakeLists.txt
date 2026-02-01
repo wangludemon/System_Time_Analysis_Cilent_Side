@@ -13,6 +13,9 @@ qt_add_qml_module(isureContent
         HomePage.qml
         HomePageForm.ui.qml
 
+        SystemSimulatorView.qml
+        RtaPageView.qml
+
         VirtualMachineItem.qml
         VirtualMachineItemForm.ui.qml
         VirtualMachineOption.qml
@@ -64,4 +67,6 @@ qt_add_qml_module(isureContent
         QML_FILES SettingsView.qml SettingsViewForm.ui.qml
         RESOURCES images/remove.svg
         RESOURCES images/openEuler.svg
+        QML_FILES SystemSimulatorView.qml
+        QML_FILES RtaPageView.qml
 )

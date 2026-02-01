@@ -1,0 +1,15 @@
+{
+    "formatRevision": 1,
+    "modules": [
+        {
+            "moduleFiles": [
+                {
+                    "entries": [
+                    ],
+                    "filePath": "E:/iSurePro/iSure/content/VirtualMachineScrollView.qml"
+                }
+            ],
+            "moduleId": "content(isureContent)"
+        }
+    ]
+}

@@ -3,3 +3,4 @@
 
 add_subdirectory(CustomControls)
 add_subdirectory(VirtualMachine)
+add_subdirectory(SystemSimulator)

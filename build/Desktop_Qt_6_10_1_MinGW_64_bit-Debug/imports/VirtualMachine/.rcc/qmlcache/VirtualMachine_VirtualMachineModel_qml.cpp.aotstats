@@ -1,0 +1,15 @@
+{
+    "formatRevision": 1,
+    "modules": [
+        {
+            "moduleFiles": [
+                {
+                    "entries": [
+                    ],
+                    "filePath": "E:/iSurePro/iSure/imports/VirtualMachine/VirtualMachineModel.qml"
+                }
+            ],
+            "moduleId": "VirtualMachine(VirtualMachine)"
+        }
+    ]
+}

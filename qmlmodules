@@ -15,4 +15,5 @@ target_link_libraries(iSure PRIVATE
     isureContentplugin
     CustomControlsplugin
     VirtualMachineplugin
+    SystemSimulatorplugin
 )

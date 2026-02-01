@@ -1,0 +1,3 @@
+D:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\iSure.dir/objects.a
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\iSure.dir/objects.a @CMakeFiles\iSure.dir\objects1.rsp
+D:\Qt\Tools\mingw1310_64\bin\g++.exe -DQT_QML_DEBUG -g -Wl,--whole-archive CMakeFiles\iSure.dir/objects.a -Wl,--no-whole-archive -o iSure.exe -Wl,--out-implib,libiSure.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\iSure.dir\linkLibs.rsp

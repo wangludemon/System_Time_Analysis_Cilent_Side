@@ -1,0 +1,38 @@
+module content
+linktarget isureContentplugin
+optional plugin isureContentplugin
+classname contentPlugin
+typeinfo isureContent.qmltypes
+prefer :/qt/qml/content/
+App 1.0 App.qml
+BottomBar 1.0 BottomBar.qml
+BottomBarForm 1.0 BottomBarForm.ui.qml
+HomePage 1.0 HomePage.qml
+HomePageForm 1.0 HomePageForm.ui.qml
+SystemSimulatorView 1.0 SystemSimulatorView.qml
+RtaPageView 1.0 RtaPageView.qml
+VirtualMachineItem 1.0 VirtualMachineItem.qml
+VirtualMachineItemForm 1.0 VirtualMachineItemForm.ui.qml
+VirtualMachineOption 1.0 VirtualMachineOption.qml
+VirtualMachineOptionForm 1.0 VirtualMachineOptionForm.ui.qml
+VirtualMachineScrollView 1.0 VirtualMachineScrollView.qml
+VirtualMachineScrollViewForm 1.0 VirtualMachineScrollViewForm.ui.qml
+VirtualMachineSwipeView 1.0 VirtualMachineSwipeView.qml
+VirtualMachineSwipeViewForm 1.0 VirtualMachineSwipeViewForm.ui.qml
+VirtualMachineView 1.0 VirtualMachineView.qml
+VirtualMachineViewForm 1.0 VirtualMachineViewForm.ui.qml
+SideBar 1.0 SideBar.qml
+SideBarForm 1.0 SideBarForm.ui.qml
+HostResourceInfo 1.0 HostResourceInfo.qml
+CreateVmDialog 1.0 CreateVmDialog.qml
+DeviceScrollView 1.0 DeviceScrollView.qml
+DeviceScrollViewForm 1.0 DeviceScrollViewForm.ui.qml
+DeviceTablePane 1.0 DeviceTablePane.qml
+DeviceTablePaneForm 1.0 DeviceTablePaneForm.ui.qml
+DeviceManagementView 1.0 DeviceManagementView.qml
+DeviceManagementViewForm 1.0 DeviceManagementViewForm.ui.qml
+DeviceTable 1.0 DeviceTable.qml
+DeviceTableForm 1.0 DeviceTableForm.ui.qml
+SettingsView 1.0 SettingsView.qml
+SettingsViewForm 1.0 SettingsViewForm.ui.qml
+

@@ -1,0 +1,63 @@
+{
+    "formatRevision": 1,
+    "modules": [
+        {
+            "moduleFiles": [
+                {
+                    "entries": [
+                        {
+                            "codegenResult": 2,
+                            "column": 12,
+                            "durationMicroseconds": 186,
+                            "functionName": "width",
+                            "line": 10,
+                            "message": "Cannot access value for name Constants"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 13,
+                            "durationMicroseconds": 86,
+                            "functionName": "height",
+                            "line": 11,
+                            "message": "Cannot access value for name Constants"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 19,
+                            "durationMicroseconds": 231,
+                            "functionName": "minimumWidth",
+                            "line": 14,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 21,
+                            "message": "Could not find property \"fill\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 179,
+                            "functionName": "onCompleted",
+                            "line": 24,
+                            "message": "Cannot access value for name Constants"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 28,
+                            "durationMicroseconds": 22,
+                            "functionName": "onCompleted",
+                            "line": 24,
+                            "message": ""
+                        }
+                    ],
+                    "filePath": "E:/iSurePro/iSure/content/App.qml"
+                }
+            ],
+            "moduleId": "content(isureContent)"
+        }
+    ]
+}

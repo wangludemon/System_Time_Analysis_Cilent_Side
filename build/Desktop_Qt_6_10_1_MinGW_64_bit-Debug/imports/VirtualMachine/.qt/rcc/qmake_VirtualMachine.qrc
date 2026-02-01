@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/VirtualMachine">
+    <file alias="qmldir">E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/VirtualMachine/qmldir</file>
+  </qresource>
+</RCC>
+

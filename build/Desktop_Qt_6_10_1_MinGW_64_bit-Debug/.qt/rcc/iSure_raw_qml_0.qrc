@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/Main/">
+    <file alias="Main.qml">E:/iSurePro/iSure/Main.qml</file>
+  </qresource>
+</RCC>
+

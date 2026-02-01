@@ -1,0 +1,63 @@
+{
+    "formatRevision": 1,
+    "modules": [
+        {
+            "moduleFiles": [
+                {
+                    "entries": [
+                        {
+                            "codegenResult": 2,
+                            "column": 16,
+                            "durationMicroseconds": 190,
+                            "functionName": "color",
+                            "line": 33,
+                            "message": "Cannot access value for name Constants"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 17,
+                            "durationMicroseconds": 32,
+                            "functionName": "target",
+                            "line": 38,
+                            "message": "Cannot access value for name networkManager"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalCenter",
+                            "line": 43,
+                            "message": "Could not find property \"horizontalCenter\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 33,
+                            "durationMicroseconds": 0,
+                            "functionName": "verticalCenter",
+                            "line": 44,
+                            "message": "Could not find property \"verticalCenter\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 19,
+                            "durationMicroseconds": 68,
+                            "functionName": "when",
+                            "line": 68,
+                            "message": "Cannot access value for name Constants"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 25,
+                            "durationMicroseconds": 5,
+                            "functionName": "target",
+                            "line": 70,
+                            "message": "Cannot access value for name internal"
+                        }
+                    ],
+                    "filePath": "E:/iSurePro/iSure/content/DeviceTablePaneForm.ui.qml"
+                }
+            ],
+            "moduleId": "content(isureContent)"
+        }
+    ]
+}

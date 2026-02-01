@@ -1,0 +1,2 @@
+D:\Qt\Tools\mingw1310_64\bin\ar.exe qc libVirtualMachineplugin.a CMakeFiles/VirtualMachineplugin.dir/VirtualMachineplugin_autogen/mocs_compilation.cpp.obj CMakeFiles/VirtualMachineplugin.dir/VirtualMachineplugin_VirtualMachinePlugin.cpp.obj
+D:\Qt\Tools\mingw1310_64\bin\ranlib.exe libVirtualMachineplugin.a
