@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/VirtualMachine/">
-    <file alias="AppSettings.qml">E:/iSurePro/iSure/imports/VirtualMachine/AppSettings.qml</file>
-    <file alias="Constants.qml">E:/iSurePro/iSure/imports/VirtualMachine/Constants.qml</file>
-    <file alias="VirtualMachineModel.qml">E:/iSurePro/iSure/imports/VirtualMachine/VirtualMachineModel.qml</file>
-  </qresource>
-</RCC>
-

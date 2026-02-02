@@ -1,7 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/CustomControls/">
-    <file alias="CustomRoundButton.qml">E:/iSurePro/iSure/imports/CustomControls/CustomRoundButton.qml</file>
-    <file alias="CustomSwitch.qml">E:/iSurePro/iSure/imports/CustomControls/CustomSwitch.qml</file>
-  </qresource>
-</RCC>
-

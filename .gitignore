@@ -1,0 +1,25 @@
+# Build outputs
+build*/
+cmake-build-*/
+_build*/
+
+# Qt generated / cache
+**/.rcc/
+**/.qt/
+**/qmlcache/
+**/*.qmlc
+**/*.jsc
+*.aotstats
+
+# Qt Creator / user files
+*.user
+*.user.*
+*.qmlproject.user
+*.creator.user
+.qtcreator/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

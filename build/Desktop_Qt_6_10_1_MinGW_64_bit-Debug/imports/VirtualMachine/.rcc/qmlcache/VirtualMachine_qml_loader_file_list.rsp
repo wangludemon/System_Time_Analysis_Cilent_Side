@@ -1,7 +1,0 @@
---resource
-E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/VirtualMachine/.qt/rcc/qmake_VirtualMachine.qrc
---resource
-E:/iSurePro/iSure/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/imports/VirtualMachine/.qt/rcc/VirtualMachine_raw_qml_0.qrc
-/qt/qml/VirtualMachine/AppSettings.qml
-/qt/qml/VirtualMachine/Constants.qml
-/qt/qml/VirtualMachine/VirtualMachineModel.qml
