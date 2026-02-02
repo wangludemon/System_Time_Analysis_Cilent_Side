@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+package shyper;
+
+// 物理内存区域
+message VmPa {
+  uint64 pa_start = 1;
+  uint64 pa_length = 2;
+}
+
+message VmEmuDev {
+  string name = 1;
+  uint64 base_ipa = 2;
+  uint64 length = 3;
+  uint32 irq_id = 4;
+  uint32 cfg_num = 5;
+  repeated uint64 cfg_list = 6;
+  uint32 emu_type = 7;
+  uint32 mediated = 8;
+}
+
+// 单个 VM 信息
+message VmInfo {
+  uint32 id             = 1;
+  string name           = 2;
+  string vm_type        = 3;
+  string vm_state       = 4;
+  uint32 allocate_bitmap = 5;
+  uint32 phy_mem_num    = 6;
+  repeated VmPa phy_mem = 7;
+  uint32 pt_irqs_num    = 8;           // 新增：直通中断数量
+  repeated uint32 pt_irqs = 9;         // 新增：直通中断号列表
+  uint32 emu_dev_num    = 10;                // 新增：模拟设备数量
+  repeated VmEmuDev emu_dev = 11;      // 新增：模拟设备列表
+}
+
+// 平台内存区域
+message PlatMemRegion {
+  uint64 base = 1;
+  uint64 size = 2;
+}
+
+// Hypervisor 信息
+message HypervisorInfo {
+  string version        = 1;
+  uint32 phys_cpu_num   = 2;
+  uint32 mem_region_num = 3;
+  repeated PlatMemRegion mem_regions = 4;
+  bytes interrupt_bitmap = 5; // 新增：全局中断分配情况（4096 位 = 512 字节）
+}
+
+
+// SnapshotReply 对应 SnapShot
+message SnapshotReply {
+  uint32 snapshot_size  = 1;
+  uint32 vm_num         = 2;
+  repeated VmInfo vms   = 3;
+  HypervisorInfo hypervisor = 4;
+}
+
+message SnapshotRequest {}
+
+message VmActionRequest {
+  uint32 vm_id = 1;
+  ActionType action = 2; // "boot" or "remove"
+}
+
+message VmActionReply {
+  bool success = 1;
+  uint32 vm_id = 2; // 实际分配的 VM id
+}
+
+enum ActionType {
+  ACTION_UNSPECIFIED = 0;
+  ACTION_BOOT = 1;
+  ACTION_REMOVE = 2;
+}
+
+// 创建虚拟机请求
+message CreateVmRequest {
+  string vm_name = 1;
+  string os_type = 2;
+  uint32 cpu_cores = 3;
+  uint64 memory_size = 4; // 内存大小，单位字节
+}
+
+// 创建虚拟机响应
+message CreateVmReply {
+  bool success = 1;
+  VmInfo vm_info = 2; // 新创建的虚拟机信息
+  string error_message = 3; // 错误信息
+}
+
+service ShyperService {
+  rpc GetSnapshot (SnapshotRequest) returns (SnapshotReply);
+  rpc VmAction(VmActionRequest) returns (VmActionReply);
+  rpc CreateVm(CreateVmRequest) returns (CreateVmReply);
+}
+

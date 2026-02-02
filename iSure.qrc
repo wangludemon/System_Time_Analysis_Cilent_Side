@@ -1,0 +1,28 @@
+<!DOCTYPE RCC>
+<RCC>
+  <qresource>
+    <file>content/App.qml</file>
+    <file>content/BottomBar.qml</file>
+    <file>content/BottomBarForm.ui.qml</file>
+    <file>content/DeviceTable.qml</file>
+    <file>content/DeviceTableForm.ui.qml</file>
+    <file>content/HomePage.qml</file>
+    <file>content/HomePageForm.ui.qml</file>
+    <file>content/images/arrow.svg</file>
+    <file>content/images/circle.svg</file>
+    <file>content/images/home.svg</file>
+    
+    
+    <file>content/DeviceManagementView.qml</file>
+    <file>content/DeviceManagementViewForm.ui.qml</file>
+    <file>imports/VirtualMachine/AppSettings.qml</file>
+    <file>imports/VirtualMachine/Constants.qml</file>
+    <file>imports/VirtualMachine/qmldir</file>
+    
+<file>imports/CustomControls/CustomRoundButton.qml</file>
+        <file>imports/CustomControls/CustomSwitch.qml</file>
+        <file>imports/CustomControls/qmldir</file>
+    <file>qtquickcontrols2.conf</file>
+    <file>iSure.qmlproject</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,37 @@
+[{
+    "Id": "isure-phosphoricons",
+    "Name": "Phosphor Icons",
+    "QDocModule": "qtdoc",
+    "QtUsage": "Used in the isure example.",
+    "QtParts": [ "examples" ],
+    "Files": [
+        "content/images/stats.svg",
+        "content/images/settings.svg",
+        "content/images/more.svg",
+        "content/images/start.svg",
+        "content/images/theme.svg",
+        "content/images/device.svg",
+        "content/images/arrow.svg",
+        "content/images/home.svg"
+    ],
+    "Homepage": "https://phosphoricons.com",
+    "LicenseId": "CC-BY-4.0",
+    "License": "Creative Commons Attribution 4.0 International",
+    "Copyright": "© Phosphor Icons"
+},
+{
+    "Id": "isure-materialicons",
+    "Name": "Google Material Icons",
+    "QDocModule": "qtdoc",
+    "QtUsage": "Used in the isure example.",
+    "QtParts": [ "examples" ],
+    "Files": [
+        "content/images/home.svg",
+        "content/images/arrow.svg",
+        "content/images/theme.svg"
+    ],
+    "Homepage": "https://fonts.google.com/icons",
+    "LicenseId": "Apache-2.0",
+    "License": "Apache License 2.0",
+    "Copyright": "© Google"
+}]

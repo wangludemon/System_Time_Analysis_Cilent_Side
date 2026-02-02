@@ -1,0 +1,22 @@
+version = 1
+
+[[annotations]]
+path = ["content/images/stats.svg",
+        "content/images/settings.svg",
+        "content/images/more.svg",
+        "content/images/start.svg",
+        "content/images/theme.svg",
+        "content/images/device.svg",
+        "content/images/arrow.svg",
+        "content/images/home.svg"]
+precedence = "closest"
+SPDX-FileCopyrightText = "Copyright Phosphor Icons"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["content/images/home.svg",
+        "content/images/arrow.svg",
+        "content/images/theme.svg"]
+precedence = "closest"
+SPDX-FileCopyrightText = "Copyright Google"
+SPDX-License-Identifier = "Apache-2.0"
