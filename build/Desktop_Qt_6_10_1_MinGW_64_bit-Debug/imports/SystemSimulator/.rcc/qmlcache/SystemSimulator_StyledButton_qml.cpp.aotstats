@@ -6,19 +6,19 @@
                 {
                     "entries": [
                         {
-                            "codegenResult": 0,
-                            "column": 33,
-                            "durationMicroseconds": 186,
-                            "functionName": "borderColor",
-                            "line": 10,
-                            "message": ""
+                            "codegenResult": 2,
+                            "column": 17,
+                            "durationMicroseconds": 91,
+                            "functionName": "radius",
+                            "line": 23,
+                            "message": "Cannot access value for name control"
                         },
                         {
                             "codegenResult": 2,
                             "column": 16,
-                            "durationMicroseconds": 76,
+                            "durationMicroseconds": 58,
                             "functionName": "color",
-                            "line": 15,
+                            "line": 24,
                             "message": "Cannot access value for name control"
                         },
                         {
@@ -26,23 +26,23 @@
                             "column": 18,
                             "durationMicroseconds": 19,
                             "functionName": "opacity",
-                            "line": 18,
-                            "message": "Cannot access value for name control"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 23,
-                            "durationMicroseconds": 11,
-                            "functionName": "color",
-                            "line": 16,
+                            "line": 25,
                             "message": "Cannot access value for name control"
                         },
                         {
                             "codegenResult": 2,
                             "column": 15,
-                            "durationMicroseconds": 15,
+                            "durationMicroseconds": 11,
                             "functionName": "text",
-                            "line": 22,
+                            "line": 29,
+                            "message": "Cannot access value for name control"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 15,
+                            "durationMicroseconds": 10,
+                            "functionName": "font",
+                            "line": 30,
                             "message": "Cannot access value for name control"
                         },
                         {
@@ -50,23 +50,31 @@
                             "column": 16,
                             "durationMicroseconds": 10,
                             "functionName": "color",
-                            "line": 25,
+                            "line": 31,
                             "message": "Cannot access value for name control"
                         },
                         {
                             "codegenResult": 0,
                             "column": 30,
-                            "durationMicroseconds": 67,
+                            "durationMicroseconds": 134,
                             "functionName": "horizontalAlignment",
-                            "line": 26,
+                            "line": 32,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 28,
-                            "durationMicroseconds": 45,
+                            "durationMicroseconds": 41,
                             "functionName": "verticalAlignment",
-                            "line": 27,
+                            "line": 33,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 16,
+                            "durationMicroseconds": 31,
+                            "functionName": "elide",
+                            "line": 34,
                             "message": ""
                         }
                     ],

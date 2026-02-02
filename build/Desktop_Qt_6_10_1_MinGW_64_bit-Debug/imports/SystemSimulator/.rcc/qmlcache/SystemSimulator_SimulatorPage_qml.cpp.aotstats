@@ -6,75 +6,59 @@
                 {
                     "entries": [
                         {
-                            "codegenResult": 0,
-                            "column": 27,
-                            "durationMicroseconds": 2328,
-                            "functionName": "isDark",
-                            "line": 15,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 44,
-                            "durationMicroseconds": 142,
-                            "functionName": "pageBg",
-                            "line": 29,
-                            "message": ""
-                        },
-                        {
                             "codegenResult": 2,
                             "column": 34,
-                            "durationMicroseconds": 352,
+                            "durationMicroseconds": 510,
                             "functionName": "currentCpuData",
-                            "line": 51,
+                            "line": 36,
                             "message": "Cannot generate efficient code for access to 'length' property of sequence wrapped in non-sequence"
                         },
                         {
                             "codegenResult": 2,
                             "column": 40,
-                            "durationMicroseconds": 435,
+                            "durationMicroseconds": 463,
                             "functionName": "currentTaskTableData",
-                            "line": 56,
+                            "line": 41,
                             "message": "Cannot generate efficient code for access to 'length' property of sequence wrapped in non-sequence"
                         },
                         {
                             "codegenResult": 2,
                             "column": 40,
-                            "durationMicroseconds": 277,
+                            "durationMicroseconds": 293,
                             "functionName": "currentTaskGanttData",
-                            "line": 60,
+                            "line": 45,
                             "message": "Cannot generate efficient code for access to 'length' property of sequence wrapped in non-sequence"
                         },
                         {
                             "codegenResult": 2,
                             "column": 39,
-                            "durationMicroseconds": 312,
+                            "durationMicroseconds": 294,
                             "functionName": "currentResourceData",
-                            "line": 64,
+                            "line": 49,
                             "message": "Cannot generate efficient code for access to 'length' property of sequence wrapped in non-sequence"
                         },
                         {
                             "codegenResult": 2,
                             "column": 30,
-                            "durationMicroseconds": 986,
+                            "durationMicroseconds": 976,
                             "functionName": "legendData",
-                            "line": 68,
+                            "line": 53,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
                         },
                         {
                             "codegenResult": 0,
                             "column": 19,
-                            "durationMicroseconds": 40,
+                            "durationMicroseconds": 48,
                             "functionName": "fill",
-                            "line": 10,
+                            "line": 17,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 26,
-                            "durationMicroseconds": 97,
+                            "durationMicroseconds": 94,
                             "functionName": "onErrorOccurred",
-                            "line": 41,
+                            "line": 25,
                             "message": ""
                         },
                         {
@@ -82,839 +66,727 @@
                             "column": 26,
                             "durationMicroseconds": 21,
                             "functionName": "onErrorOccurred",
-                            "line": 41,
+                            "line": 25,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 27,
-                            "durationMicroseconds": 41,
+                            "durationMicroseconds": 43,
                             "functionName": "simulationClient",
-                            "line": 47,
+                            "line": 32,
                             "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "contentWidth",
-                            "line": 101,
-                            "message": "Could not find property \"contentWidth\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "contentHeight",
-                            "line": 102,
-                            "message": "Could not find property \"contentHeight\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 91,
+                            "line": 73,
                             "message": "Could not find property \"fill\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 38,
+                            "column": 50,
                             "durationMicroseconds": 0,
                             "functionName": "policy",
-                            "line": 94,
+                            "line": 75,
                             "message": "Could not find property \"policy\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 36,
+                            "column": 97,
                             "durationMicroseconds": 0,
                             "functionName": "policy",
-                            "line": 95,
+                            "line": 75,
                             "message": "Could not find property \"policy\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 40,
-                            "durationMicroseconds": 20,
+                            "column": 77,
+                            "durationMicroseconds": 27,
                             "functionName": "color",
-                            "line": 98,
-                            "message": "Cannot access value for name pageBg"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 21,
-                            "durationMicroseconds": 100,
-                            "functionName": "width",
-                            "line": 105,
-                            "message": "Cannot access value for name contentWidth"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 21,
-                            "durationMicroseconds": 78,
-                            "functionName": "height",
-                            "line": 106,
-                            "message": "Cannot access value for name contentHeight"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 16,
-                            "functionName": "color",
-                            "line": 125,
-                            "message": "Cannot access value for name panelBg"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 13,
-                            "functionName": "color",
-                            "line": 127,
-                            "message": "Cannot access value for name panelBorder"
+                            "line": 86,
+                            "message": "Cannot access value for name borderColor"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 47,
-                            "durationMicroseconds": 33,
+                            "column": 43,
+                            "durationMicroseconds": 29,
                             "functionName": "centerIn",
-                            "line": 131,
+                            "line": 88,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 40,
-                            "durationMicroseconds": 250,
+                            "column": 36,
+                            "durationMicroseconds": 285,
                             "functionName": "model",
-                            "line": 135,
+                            "line": 90,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
                         },
                         {
                             "codegenResult": 2,
+                            "column": 46,
+                            "durationMicroseconds": 185,
+                            "functionName": "text",
+                            "line": 93,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 172,
+                            "durationMicroseconds": 50,
+                            "functionName": "verticalAlignment",
+                            "line": 93,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 78,
+                            "durationMicroseconds": 107,
+                            "functionName": "color",
+                            "line": 96,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 63,
+                            "durationMicroseconds": 31,
+                            "functionName": "fill",
+                            "line": 96,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 55,
+                            "durationMicroseconds": 25,
+                            "functionName": "fill",
+                            "line": 98,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 66,
+                            "durationMicroseconds": 68,
+                            "functionName": "strokeColor",
+                            "line": 99,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 66,
+                            "durationMicroseconds": 59,
+                            "functionName": "strokeColor",
+                            "line": 100,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 66,
+                            "durationMicroseconds": 50,
+                            "functionName": "strokeColor",
+                            "line": 101,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 70,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 106,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 48,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 107,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 77,
+                            "durationMicroseconds": 16,
+                            "functionName": "color",
+                            "line": 119,
+                            "message": "Cannot access value for name borderColor"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 121,
+                            "message": "Could not find property \"fill\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 88,
+                            "durationMicroseconds": 0,
+                            "functionName": "policy",
+                            "line": 121,
+                            "message": "Could not find property \"policy\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 135,
+                            "durationMicroseconds": 0,
+                            "functionName": "policy",
+                            "line": 121,
+                            "message": "Could not find property \"policy\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 16,
+                            "functionName": "model",
+                            "line": 137,
+                            "message": "Cannot access value for name currentTaskTableData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 80,
+                            "durationMicroseconds": 115,
+                            "functionName": "text",
+                            "line": 140,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
                             "column": 47,
-                            "durationMicroseconds": 191,
+                            "durationMicroseconds": 425,
                             "functionName": "text",
                             "line": 143,
                             "message": "Cannot access value for name modelData"
                         },
                         {
-                            "codegenResult": 0,
-                            "column": 60,
-                            "durationMicroseconds": 50,
-                            "functionName": "verticalAlignment",
+                            "codegenResult": 2,
+                            "column": 78,
+                            "durationMicroseconds": 83,
+                            "functionName": "text",
+                            "line": 146,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 78,
+                            "durationMicroseconds": 88,
+                            "functionName": "text",
+                            "line": 147,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 78,
+                            "durationMicroseconds": 74,
+                            "functionName": "text",
+                            "line": 148,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 78,
+                            "durationMicroseconds": 70,
+                            "functionName": "text",
                             "line": 149,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 82,
-                            "durationMicroseconds": 125,
-                            "functionName": "color",
-                            "line": 154,
                             "message": "Cannot access value for name modelData"
                         },
                         {
-                            "codegenResult": 0,
-                            "column": 67,
-                            "durationMicroseconds": 33,
-                            "functionName": "fill",
-                            "line": 154,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 59,
-                            "durationMicroseconds": 28,
-                            "functionName": "fill",
-                            "line": 156,
-                            "message": ""
+                            "codegenResult": 2,
+                            "column": 78,
+                            "durationMicroseconds": 70,
+                            "functionName": "text",
+                            "line": 150,
+                            "message": "Cannot access value for name modelData"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 70,
+                            "column": 80,
+                            "durationMicroseconds": 102,
+                            "functionName": "text",
+                            "line": 151,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 80,
                             "durationMicroseconds": 71,
-                            "functionName": "strokeColor",
-                            "line": 157,
+                            "functionName": "text",
+                            "line": 152,
                             "message": "Cannot access value for name modelData"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 70,
-                            "durationMicroseconds": 57,
-                            "functionName": "strokeColor",
-                            "line": 158,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 70,
-                            "durationMicroseconds": 51,
-                            "functionName": "strokeColor",
-                            "line": 159,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 50,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 166,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 52,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 167,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 41,
-                            "functionName": "color",
-                            "line": 181,
-                            "message": "Cannot access value for name panelBg"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
+                            "column": 77,
                             "durationMicroseconds": 14,
                             "functionName": "color",
-                            "line": 183,
-                            "message": "Cannot access value for name panelBorder"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "fill",
-                            "line": 187,
-                            "message": "Could not find property \"fill\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 58,
-                            "durationMicroseconds": 0,
-                            "functionName": "policy",
-                            "line": 189,
-                            "message": "Could not find property \"policy\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 56,
-                            "durationMicroseconds": 0,
-                            "functionName": "policy",
-                            "line": 190,
-                            "message": "Could not find property \"policy\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 44,
-                            "durationMicroseconds": 17,
-                            "functionName": "model",
-                            "line": 208,
-                            "message": "Cannot access value for name currentTaskTableData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 84,
-                            "durationMicroseconds": 107,
-                            "functionName": "text",
-                            "line": 211,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 51,
-                            "durationMicroseconds": 445,
-                            "functionName": "text",
-                            "line": 214,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 82,
-                            "durationMicroseconds": 89,
-                            "functionName": "text",
-                            "line": 217,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 82,
-                            "durationMicroseconds": 73,
-                            "functionName": "text",
-                            "line": 218,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 82,
-                            "durationMicroseconds": 79,
-                            "functionName": "text",
-                            "line": 219,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 82,
-                            "durationMicroseconds": 71,
-                            "functionName": "text",
-                            "line": 220,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 82,
-                            "durationMicroseconds": 71,
-                            "functionName": "text",
-                            "line": 221,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 84,
-                            "durationMicroseconds": 75,
-                            "functionName": "text",
-                            "line": 222,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 84,
-                            "durationMicroseconds": 73,
-                            "functionName": "text",
-                            "line": 223,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 15,
-                            "functionName": "color",
-                            "line": 234,
-                            "message": "Cannot access value for name panelBg"
+                            "line": 161,
+                            "message": "Cannot access value for name borderColor"
                         },
                         {
                             "codegenResult": 2,
                             "column": 39,
-                            "durationMicroseconds": 13,
-                            "functionName": "color",
-                            "line": 236,
-                            "message": "Cannot access value for name panelBorder"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 240,
+                            "line": 163,
                             "message": "Could not find property \"fill\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 58,
+                            "column": 88,
                             "durationMicroseconds": 0,
                             "functionName": "policy",
-                            "line": 242,
+                            "line": 163,
                             "message": "Could not find property \"policy\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 56,
+                            "column": 135,
                             "durationMicroseconds": 0,
                             "functionName": "policy",
-                            "line": 243,
+                            "line": 163,
                             "message": "Could not find property \"policy\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 44,
-                            "durationMicroseconds": 51,
+                            "column": 40,
+                            "durationMicroseconds": 15,
                             "functionName": "model",
-                            "line": 255,
+                            "line": 174,
                             "message": "Cannot access value for name currentResourceData"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 82,
-                            "durationMicroseconds": 175,
+                            "column": 47,
+                            "durationMicroseconds": 181,
                             "functionName": "text",
-                            "line": 258,
+                            "line": 181,
                             "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 84,
-                            "durationMicroseconds": 149,
-                            "functionName": "text",
-                            "line": 259,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 84,
-                            "durationMicroseconds": 171,
-                            "functionName": "text",
-                            "line": 260,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 82,
-                            "durationMicroseconds": 158,
-                            "functionName": "text",
-                            "line": 261,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 274,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 51,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalCenter",
-                            "line": 273,
-                            "message": "Could not find property \"horizontalCenter\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 282,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 51,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalCenter",
-                            "line": 281,
-                            "message": "Could not find property \"horizontalCenter\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 32,
-                            "durationMicroseconds": 61,
-                            "functionName": "width",
-                            "line": 298,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 16,
-                            "functionName": "color",
-                            "line": 301,
-                            "message": "Cannot access value for name ganttFrameBg"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 13,
-                            "functionName": "color",
-                            "line": 303,
-                            "message": "Cannot access value for name ganttBorder"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "contentWidth",
-                            "line": 309,
-                            "message": "Could not find property \"contentWidth\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "fill",
-                            "line": 306,
-                            "message": "Could not find property \"fill\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 55,
-                            "durationMicroseconds": 22,
-                            "functionName": "model",
-                            "line": 315,
-                            "message": "Cannot access value for name currentCpuData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 119,
-                            "durationMicroseconds": 15,
-                            "functionName": "text",
-                            "line": 315,
-                            "message": "Cannot access value for name index"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 44,
-                            "durationMicroseconds": 100,
-                            "functionName": "width",
-                            "line": 319,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 45,
-                            "durationMicroseconds": 24,
-                            "functionName": "height",
-                            "line": 320,
-                            "message": "Cannot access value for name currentCpuData"
                         },
                         {
                             "codegenResult": 2,
                             "column": 47,
-                            "durationMicroseconds": 14,
-                            "functionName": "taskList",
-                            "line": 321,
-                            "message": "Cannot access value for name currentCpuData"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 32,
-                            "durationMicroseconds": 39,
-                            "functionName": "width",
-                            "line": 330,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 63,
-                            "functionName": "color",
-                            "line": 333,
-                            "message": "Cannot access value for name ganttFrameBg"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 15,
-                            "functionName": "color",
-                            "line": 335,
-                            "message": "Cannot access value for name ganttBorder"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "contentWidth",
-                            "line": 341,
-                            "message": "Could not find property \"contentWidth\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "fill",
-                            "line": 338,
-                            "message": "Could not find property \"fill\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 48,
-                            "durationMicroseconds": 17,
-                            "functionName": "model",
-                            "line": 353,
-                            "message": "Cannot access value for name currentTaskGanttData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 86,
-                            "durationMicroseconds": 135,
+                            "durationMicroseconds": 153,
                             "functionName": "text",
-                            "line": 355,
+                            "line": 187,
                             "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 86,
-                            "durationMicroseconds": 280,
-                            "functionName": "text",
-                            "line": 356,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 55,
-                            "durationMicroseconds": 403,
-                            "functionName": "text",
-                            "line": 359,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 44,
-                            "durationMicroseconds": 94,
-                            "functionName": "width",
-                            "line": 367,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 45,
-                            "durationMicroseconds": 27,
-                            "functionName": "height",
-                            "line": 368,
-                            "message": "Cannot access value for name currentTaskGanttData"
                         },
                         {
                             "codegenResult": 2,
                             "column": 47,
-                            "durationMicroseconds": 15,
-                            "functionName": "taskList",
-                            "line": 369,
-                            "message": "Cannot access value for name currentTaskGanttData"
+                            "durationMicroseconds": 146,
+                            "functionName": "text",
+                            "line": 193,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 47,
+                            "durationMicroseconds": 224,
+                            "functionName": "text",
+                            "line": 200,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 213,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 71,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalCenter",
+                            "line": 211,
+                            "message": "Could not find property \"horizontalCenter\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 220,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 71,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalCenter",
+                            "line": 218,
+                            "message": "Could not find property \"horizontalCenter\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 28,
-                            "durationMicroseconds": 13,
-                            "functionName": "color",
-                            "line": 384,
-                            "message": "Cannot access value for name panelBg"
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 232,
+                            "message": "Could not find property \"width\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 35,
+                            "column": 69,
+                            "durationMicroseconds": 0,
+                            "functionName": "contentWidth",
+                            "line": 232,
+                            "message": "Could not find property \"contentWidth\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 47,
+                            "durationMicroseconds": 32,
+                            "functionName": "model",
+                            "line": 237,
+                            "message": "Cannot access value for name currentCpuData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 111,
+                            "durationMicroseconds": 15,
+                            "functionName": "text",
+                            "line": 237,
+                            "message": "Cannot access value for name index"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
+                            "durationMicroseconds": 156,
+                            "functionName": "width",
+                            "line": 241,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 37,
+                            "durationMicroseconds": 43,
+                            "functionName": "height",
+                            "line": 242,
+                            "message": "Cannot access value for name currentCpuData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 16,
+                            "functionName": "taskList",
+                            "line": 243,
+                            "message": "Cannot access value for name currentCpuData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 250,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 69,
+                            "durationMicroseconds": 0,
+                            "functionName": "contentWidth",
+                            "line": 250,
+                            "message": "Could not find property \"contentWidth\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 17,
+                            "functionName": "model",
+                            "line": 261,
+                            "message": "Cannot access value for name currentTaskGanttData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 78,
+                            "durationMicroseconds": 128,
+                            "functionName": "text",
+                            "line": 263,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 78,
+                            "durationMicroseconds": 374,
+                            "functionName": "text",
+                            "line": 264,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 47,
+                            "durationMicroseconds": 886,
+                            "functionName": "text",
+                            "line": 267,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
+                            "durationMicroseconds": 108,
+                            "functionName": "width",
+                            "line": 275,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 37,
+                            "durationMicroseconds": 28,
+                            "functionName": "height",
+                            "line": 276,
+                            "message": "Cannot access value for name currentTaskGanttData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 14,
+                            "functionName": "taskList",
+                            "line": 277,
+                            "message": "Cannot access value for name currentTaskGanttData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 74,
                             "durationMicroseconds": 12,
                             "functionName": "color",
-                            "line": 386,
-                            "message": "Cannot access value for name panelBorder"
+                            "line": 286,
+                            "message": "Cannot access value for name borderColor"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 32,
+                            "column": 84,
                             "durationMicroseconds": 14,
                             "functionName": "model",
-                            "line": 392,
+                            "line": 288,
                             "message": "Cannot access value for name legendData"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 39,
-                            "durationMicroseconds": 34,
+                            "column": 35,
+                            "durationMicroseconds": 38,
                             "functionName": "fill",
-                            "line": 389,
+                            "line": 288,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 41,
-                            "durationMicroseconds": 89,
+                            "column": 48,
+                            "durationMicroseconds": 90,
                             "functionName": "height",
-                            "line": 398,
+                            "line": 292,
                             "message": "Cannot access value for name modelData"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 46,
-                            "durationMicroseconds": 92,
+                            "column": 42,
+                            "durationMicroseconds": 85,
                             "functionName": "visible",
-                            "line": 401,
+                            "line": 294,
                             "message": "Cannot access value for name modelData"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 44,
-                            "durationMicroseconds": 162,
+                            "column": 40,
+                            "durationMicroseconds": 168,
                             "functionName": "color",
-                            "line": 406,
+                            "line": 295,
                             "message": "Cannot access value for name modelData"
                         },
                         {
                             "codegenResult": 2,
                             "column": 50,
-                            "durationMicroseconds": 200,
+                            "durationMicroseconds": 184,
                             "functionName": "visible",
-                            "line": 409,
+                            "line": 296,
                             "message": "Cannot access value for name modelData"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 55,
+                            "column": 149,
                             "durationMicroseconds": 36,
                             "functionName": "fill",
-                            "line": 410,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 50,
-                            "durationMicroseconds": 168,
-                            "functionName": "visible",
-                            "line": 415,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 55,
-                            "durationMicroseconds": 29,
-                            "functionName": "fill",
-                            "line": 416,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 50,
-                            "durationMicroseconds": 85,
-                            "functionName": "visible",
-                            "line": 430,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 55,
-                            "durationMicroseconds": 27,
-                            "functionName": "fill",
-                            "line": 431,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 50,
-                            "durationMicroseconds": 78,
-                            "functionName": "visible",
-                            "line": 443,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 55,
-                            "durationMicroseconds": 26,
-                            "functionName": "fill",
-                            "line": 444,
+                            "line": 296,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
                             "column": 46,
-                            "durationMicroseconds": 73,
+                            "durationMicroseconds": 164,
                             "functionName": "visible",
-                            "line": 453,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 54,
-                            "durationMicroseconds": 98,
-                            "functionName": "visible",
-                            "line": 457,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 54,
-                            "durationMicroseconds": 121,
-                            "functionName": "visible",
-                            "line": 458,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 225,
-                            "durationMicroseconds": 27,
-                            "functionName": "direction",
-                            "line": 458,
-                            "message": "Cannot load property CounterClockwise from const QMetaObject."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 410,
-                            "durationMicroseconds": 16,
-                            "functionName": "direction",
-                            "line": 458,
-                            "message": "Cannot load property CounterClockwise from const QMetaObject."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 54,
-                            "durationMicroseconds": 85,
-                            "functionName": "visible",
-                            "line": 459,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 54,
-                            "durationMicroseconds": 82,
-                            "functionName": "visible",
-                            "line": 460,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 54,
-                            "durationMicroseconds": 77,
-                            "functionName": "visible",
-                            "line": 461,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 54,
-                            "durationMicroseconds": 75,
-                            "functionName": "visible",
-                            "line": 462,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 54,
-                            "durationMicroseconds": 73,
-                            "functionName": "visible",
-                            "line": 463,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 54,
-                            "durationMicroseconds": 81,
-                            "functionName": "visible",
-                            "line": 464,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 54,
-                            "durationMicroseconds": 119,
-                            "functionName": "visible",
-                            "line": 465,
-                            "message": "Cannot access value for name modelData"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 182,
-                            "functionName": "text",
-                            "line": 470,
+                            "line": 299,
                             "message": "Cannot access value for name modelData"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 52,
-                            "durationMicroseconds": 52,
-                            "functionName": "verticalAlignment",
-                            "line": 474,
+                            "column": 51,
+                            "durationMicroseconds": 29,
+                            "functionName": "fill",
+                            "line": 300,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 41,
-                            "durationMicroseconds": 149,
+                            "column": 50,
+                            "durationMicroseconds": 87,
+                            "functionName": "visible",
+                            "line": 325,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 105,
+                            "durationMicroseconds": 27,
+                            "functionName": "fill",
+                            "line": 325,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 50,
+                            "durationMicroseconds": 77,
+                            "functionName": "visible",
+                            "line": 326,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 104,
+                            "durationMicroseconds": 26,
+                            "functionName": "fill",
+                            "line": 326,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 42,
+                            "durationMicroseconds": 75,
+                            "functionName": "visible",
+                            "line": 329,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 50,
+                            "durationMicroseconds": 123,
+                            "functionName": "visible",
+                            "line": 330,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 50,
+                            "durationMicroseconds": 91,
+                            "functionName": "visible",
+                            "line": 331,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 221,
+                            "durationMicroseconds": 25,
+                            "functionName": "direction",
+                            "line": 331,
+                            "message": "Cannot load property CounterClockwise from const QMetaObject."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 406,
+                            "durationMicroseconds": 16,
+                            "functionName": "direction",
+                            "line": 331,
+                            "message": "Cannot load property CounterClockwise from const QMetaObject."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 50,
+                            "durationMicroseconds": 90,
+                            "functionName": "visible",
+                            "line": 332,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 50,
+                            "durationMicroseconds": 76,
+                            "functionName": "visible",
+                            "line": 333,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 50,
+                            "durationMicroseconds": 74,
+                            "functionName": "visible",
+                            "line": 334,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 50,
+                            "durationMicroseconds": 74,
+                            "functionName": "visible",
+                            "line": 335,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 50,
+                            "durationMicroseconds": 75,
+                            "functionName": "visible",
+                            "line": 336,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 50,
+                            "durationMicroseconds": 74,
+                            "functionName": "visible",
+                            "line": 337,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 50,
+                            "durationMicroseconds": 72,
+                            "functionName": "visible",
+                            "line": 338,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 157,
+                            "functionName": "text",
+                            "line": 341,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 99,
+                            "durationMicroseconds": 16,
+                            "functionName": "color",
+                            "line": 341,
+                            "message": "Cannot access value for name borderColor"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 131,
+                            "durationMicroseconds": 50,
+                            "functionName": "verticalAlignment",
+                            "line": 341,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 158,
+                            "durationMicroseconds": 142,
                             "functionName": "height",
-                            "line": 475,
+                            "line": 341,
                             "message": "Cannot access value for name modelData"
                         }
                     ],
