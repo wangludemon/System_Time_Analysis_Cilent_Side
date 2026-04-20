@@ -3,6 +3,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import SystemSimulator 1.0
 import VirtualMachine
+import QtCore
 
 Item {
     id: page
@@ -28,17 +29,55 @@ Item {
     // Backend
     RtaClient {
         id: client
+        serverIp: AppSettings.serverIp
+        serverPort: AppSettings.serverPort
+
         onAnalysisFinished: (success, msg) => {
+            analysisTimeoutTimer.stop()
             analyzing = false
-            console.log("Analyze finished:", success, msg)
+
+            if (success) {
+                analysisMessage = ""
+                console.log("Analyze finished:", success, msg)
+            } else {
+                analysisMessage = msg
+                console.error("Analyze failed:", msg)
+            }
+        }
+
+        Component.onCompleted: {
+            console.log("RtaPage AppSettings.serverIp =", AppSettings.serverIp)
+            console.log("RtaPage client.baseUrl =", client.baseUrl)
+        }
+
+        onServerConfigChanged: {
+            console.log("RtaClient server config changed, baseUrl =", client.baseUrl)
         }
     }
 
     property bool analyzing: false
     property string selectedMethod: "MSRP"
     property string selectedMode: "LO"
+    property string analysisMessage: ""
 
-    Rectangle { anchors.fill: parent; color: pageBg }
+    Timer {
+        id: analysisTimeoutTimer
+        interval: 5000
+        repeat: false
+
+        onTriggered: {
+            if (analyzing) {
+                analyzing = false
+                analysisMessage = "分析超时，请检查后端服务或IP地址"
+                console.error(analysisMessage)
+            }
+        }
+    }
+
+    Rectangle {
+        anchors.fill: parent
+        color: pageBg
+    }
 
     ScrollView {
         id: scroll
@@ -82,6 +121,7 @@ Item {
                         }
 
                         Label { text: "方法"; color: textColor; font: mainFont }
+
                         ComboBox {
                             id: methodBox
                             model: ["MSRP", "MSRP_NEW"]
@@ -98,6 +138,7 @@ Item {
                                 rightPadding: 28
                                 font: parent.font
                             }
+
                             background: Rectangle {
                                 color: dark ? "#012B31" : "white"
                                 radius: 4
@@ -107,6 +148,7 @@ Item {
                         }
 
                         Label { text: "模式"; color: textColor; font: mainFont }
+
                         ComboBox {
                             model: ["LO", "HI", "ModeSwitch"]
                             currentIndex: 0
@@ -122,6 +164,7 @@ Item {
                                 rightPadding: 28
                                 font: parent.font
                             }
+
                             background: Rectangle {
                                 color: dark ? "#012B31" : "white"
                                 radius: 4
@@ -137,7 +180,12 @@ Item {
                             enabled: !analyzing
                             Layout.preferredWidth: 130
                             Layout.preferredHeight: 36
-                            background: Rectangle { radius: 6; color: parent.down ? primaryDown : primaryColor }
+
+                            background: Rectangle {
+                                radius: 6
+                                color: parent.down ? primaryDown : primaryColor
+                            }
+
                             contentItem: Text {
                                 text: parent.text
                                 color: "white"
@@ -145,8 +193,11 @@ Item {
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
                             }
+
                             onClicked: {
                                 analyzing = true
+                                analysisMessage = ""
+                                analysisTimeoutTimer.restart()
                                 client.analyze(selectedMethod, selectedMode)
                             }
                         }
@@ -156,6 +207,7 @@ Item {
                             color: dark ? "#3B4A4D" : "#909399"
                             Layout.preferredWidth: 170
                             Layout.preferredHeight: 36
+
                             Text {
                                 anchors.centerIn: parent
                                 text: "系统模式: " + (client.analysisSystemMode ? client.analysisSystemMode : "-")
@@ -170,6 +222,7 @@ Item {
                             color: client.analysisSchedulable ? "#67C23A" : "#F56C6C"
                             Layout.preferredWidth: 180
                             Layout.preferredHeight: 36
+
                             Text {
                                 anchors.centerIn: parent
                                 text: "可调度: " + (client.analysisSchedulable ? "是" : "否")
@@ -186,6 +239,7 @@ Item {
                             border.width: 1
                             Layout.fillWidth: true
                             Layout.preferredHeight: 36
+
                             Text {
                                 anchors.centerIn: parent
                                 text: client.analysisReason
@@ -195,6 +249,15 @@ Item {
                             }
                         }
                     }
+                }
+
+                Label {
+                    visible: analysisMessage.length > 0
+                    text: analysisMessage
+                    color: "#F56C6C"
+                    Layout.fillWidth: true
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: 12
                 }
 
                 // ======= Table =======
@@ -283,13 +346,13 @@ Item {
         opacity: analyzing ? 0.15 : 0
         visible: analyzing
     }
+
     BusyIndicator {
         anchors.centerIn: parent
         running: analyzing
         visible: analyzing
     }
 
-    // ===== Components：用 contentWidth 算列宽，避免缩小时挤压 =====
     component HeaderCell: Item {
         property string text
         property real w: 1.0

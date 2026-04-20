@@ -3,22 +3,19 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import SystemSimulator 1.0
 import VirtualMachine
+import QtCore
 
 Item {
     id: paramPage
 
-    // ========= 最小内容尺寸：小于这个就出滚动条，不挤压 =========
     readonly property int minContentWidth: 1500
     readonly property int minContentHeight: 900
 
-    // Theme
     readonly property bool dark: AppSettings.isDarkTheme
 
-    // 固定绿色（对齐“创建虚拟机”按钮风格）
     readonly property color primaryColor: "#4CAF50"
     readonly property color primaryDown: "#2CDE85"
 
-    // 跟随主题
     readonly property color pageBg: Constants.backgroundColor
     readonly property color panelBg: Constants.accentColor
     readonly property color borderColor: dark ? "#1C3A3E" : "#DCDFE6"
@@ -29,33 +26,50 @@ Item {
     readonly property color highlightBg: dark ? "#044A53" : "#E0F7FA"
     readonly property color inputBg: dark ? "#012B31" : "white"
 
-    readonly property font  mainFont: Qt.font({ family: "Microsoft YaHei", pixelSize: 13 })
-    readonly property int   inputHeight: 38
+    readonly property font mainFont: Qt.font({ family: "Microsoft YaHei", pixelSize: 13 })
+    readonly property int inputHeight: 38
 
-    // Backend
     RtaClient {
         id: client
+        serverIp: AppSettings.serverIp
+        serverPort: AppSettings.serverPort
+
         onRequestFinished: (success, msg) => {
+            generateTimeoutTimer.stop()
             generating = false
+
             if (success) {
+                requestMessage = ""
                 console.log("System Generated. Tasks:", client.tasks.length, "Resources:", client.resources.length)
                 resetHighlights()
             } else {
+                requestMessage = msg
                 console.error("Generation Failed:", msg)
             }
         }
     }
 
-    // Busy UI
     property bool generating: false
+    property string requestMessage: ""
 
-    // ==========================================
-    // State Management: Unidirectional (Task -> Resource/Core)
-    // ==========================================
+    Timer {
+        id: generateTimeoutTimer
+        interval: 5000
+        repeat: false
+
+        onTriggered: {
+            if (generating) {
+                generating = false
+                requestMessage = "请求超时，请检查后端服务或IP地址"
+                console.error(requestMessage)
+            }
+        }
+    }
+
     property int currentViewedTaskID: -1
-    property var highlightedResourceIDs: []     // [1,2,3]
-    property var highlightedPartitions: []      // [0]
-    property var resourceRequestMap: ({})       // { "1":2, "2":1, "3":2 }
+    property var highlightedResourceIDs: []
+    property var highlightedPartitions: []
+    property var resourceRequestMap: ({})
 
     function resetHighlights() {
         currentViewedTaskID = -1
@@ -75,14 +89,14 @@ Item {
 
     function handleTaskView(taskData) {
         currentViewedTaskID = toNum(taskData.id)
-        highlightedPartitions = [ toNum(taskData.partition) ]
+        highlightedPartitions = [toNum(taskData.partition)]
 
         var newHiRes = []
         var newMap = ({})
 
         var resIndices = asJs(taskData.resourceRequiredIndex)
-        var counts     = asJs(taskData.accessCount)
-        var resArr      = asJs(client.resources)
+        var counts = asJs(taskData.accessCount)
+        var resArr = asJs(client.resources)
 
         if (!resIndices || !counts || !resArr) {
             highlightedResourceIDs = []
@@ -93,11 +107,13 @@ Item {
         var n = Math.min(resIndices.length, counts.length)
         for (var i = 0; i < n; i++) {
             var idx = toNum(resIndices[i])
-            var c   = toNum(counts[i])
+            var c = toNum(counts[i])
 
-            if (idx < 0 || idx >= resArr.length) continue
+            if (idx < 0 || idx >= resArr.length)
+                continue
             var realResId = toNum(resArr[idx].id)
-            if (realResId === -1) continue
+            if (realResId === -1)
+                continue
 
             if (newHiRes.indexOf(realResId) === -1)
                 newHiRes.push(realResId)
@@ -109,13 +125,11 @@ Item {
         resourceRequestMap = newMap
     }
 
-    // ========= 背景（随主题）=========
     Rectangle {
         anchors.fill: parent
         color: pageBg
     }
 
-    // ========= 关键：ScrollView 固定最小内容尺寸，小了就滚动 =========
     ScrollView {
         id: rootScroll
         anchors.fill: parent
@@ -136,12 +150,9 @@ Item {
                 anchors.margins: 20
                 spacing: 20
 
-                // ==========================================
-                // 1) Left Side: Parameter Settings
-                // ==========================================
                 Rectangle {
                     Layout.preferredWidth: 420
-                    Layout.minimumWidth: 420      // ✅ 不允许再小，避免 SpinBox 的 +/- 挤没
+                    Layout.minimumWidth: 420
                     Layout.fillHeight: true
                     radius: 8
                     color: panelBg
@@ -190,7 +201,6 @@ Item {
 
                                     TextField {
                                         id: utilField
-
                                         Layout.fillWidth: true
                                         Layout.preferredHeight: inputHeight
                                         font: mainFont
@@ -198,6 +208,7 @@ Item {
                                         horizontalAlignment: Text.AlignHCenter
                                         verticalAlignment: Text.AlignVCenter
                                         color: titleColor
+
                                         background: Rectangle {
                                             color: inputBg
                                             radius: 4
@@ -205,8 +216,6 @@ Item {
                                             border.color: utilField.activeFocus ? primaryColor : borderColor
                                         }
 
-
-                                        // 你定义的策略
                                         readonly property double upper: Math.max(1, client.coreCount * 0.7)
                                         readonly property double fallback: Math.max(0, client.coreCount * 0.5)
 
@@ -217,7 +226,6 @@ Item {
                                             notation: DoubleValidator.StandardNotation
                                         }
 
-                                        // 只在“没编辑”的时候同步显示，避免你打字时被后端值覆盖
                                         Binding {
                                             target: utilField
                                             property: "text"
@@ -226,14 +234,12 @@ Item {
                                         }
 
                                         onEditingFinished: {
-                                            // 空字符串/非法就直接回退
                                             var v = Number(text)
                                             if (!isFinite(v) || v < 0) {
                                                 client.utilization = fallback
                                                 return
                                             }
 
-                                            // 超过上限 => 回退到 coreCount*0.5
                                             if (v > upper) {
                                                 client.utilization = fallback
                                             } else {
@@ -243,7 +249,6 @@ Item {
                                     }
                                 }
 
-
                                 InputRow { label: "最小周期（ms）"; value: client.periodMin; onValChanged: client.periodMin = val; max: 100000 }
                                 InputRow { label: "最大周期（ms）"; value: client.periodMax; onValChanged: client.periodMax = val; max: 100000 }
                                 InputRow { label: "资源数量"; value: client.resourceNum; onValChanged: client.resourceNum = val }
@@ -251,6 +256,7 @@ Item {
                                 RowLayout {
                                     Layout.fillWidth: true
                                     Label { text: "资源访问任务比例"; Layout.preferredWidth: 160; wrapMode: Text.WordWrap; color: textColor; font: mainFont }
+
                                     TextField {
                                         id: rsfField
                                         Layout.fillWidth: true
@@ -270,7 +276,6 @@ Item {
                                             notation: DoubleValidator.StandardNotation
                                         }
 
-                                        // ✅ 不编辑时才从后端刷新显示（并且固定 3 位）
                                         Binding {
                                             target: rsfField
                                             property: "text"
@@ -294,8 +299,6 @@ Item {
                                             }
                                         }
                                     }
-
-
                                 }
 
                                 InputRow { label: "访问资源最大次数"; value: client.maxAccess; onValChanged: client.maxAccess = val }
@@ -303,6 +306,7 @@ Item {
                                 RowLayout {
                                     Layout.fillWidth: true
                                     Label { text: "临界区(us)"; Layout.preferredWidth: 160; color: textColor; font: mainFont }
+
                                     RowLayout {
                                         Layout.fillWidth: true
                                         spacing: 5
@@ -316,14 +320,17 @@ Item {
                                             text: client.cslMin.toString()
                                             selectByMouse: true
                                             color: titleColor
+
                                             background: Rectangle {
                                                 color: inputBg
                                                 border.color: borderColor
                                                 radius: 4
                                                 border.width: 1
                                             }
+
                                             onEditingFinished: client.cslMin = parseInt(text)
                                         }
+
                                         Label { text: "-"; color: textColor }
 
                                         TextField {
@@ -335,12 +342,14 @@ Item {
                                             text: client.cslMax.toString()
                                             selectByMouse: true
                                             color: titleColor
+
                                             background: Rectangle {
                                                 color: inputBg
                                                 border.color: borderColor
                                                 radius: 4
                                                 border.width: 1
                                             }
+
                                             onEditingFinished: client.cslMax = parseInt(text)
                                         }
                                     }
@@ -349,6 +358,7 @@ Item {
                                 RowLayout {
                                     Layout.fillWidth: true
                                     Label { text: "分配策略"; Layout.preferredWidth: 160; color: textColor; font: mainFont }
+
                                     ComboBox {
                                         Layout.fillWidth: true
                                         Layout.preferredHeight: inputHeight
@@ -365,6 +375,7 @@ Item {
                                             rightPadding: 28
                                             font: parent.font
                                         }
+
                                         background: Rectangle {
                                             color: inputBg
                                             radius: 4
@@ -377,6 +388,7 @@ Item {
                                 RowLayout {
                                     Layout.fillWidth: true
                                     Label { text: "优先级排序"; Layout.preferredWidth: 160; color: textColor; font: mainFont }
+
                                     ComboBox {
                                         Layout.fillWidth: true
                                         Layout.preferredHeight: inputHeight
@@ -393,6 +405,7 @@ Item {
                                             rightPadding: 28
                                             font: parent.font
                                         }
+
                                         background: Rectangle {
                                             color: inputBg
                                             radius: 4
@@ -409,10 +422,12 @@ Item {
                             Layout.fillWidth: true
                             Layout.preferredHeight: 48
                             enabled: !generating
+
                             background: Rectangle {
                                 color: parent.down ? primaryDown : primaryColor
                                 radius: 6
                             }
+
                             contentItem: Text {
                                 text: parent.text
                                 color: "white"
@@ -421,59 +436,31 @@ Item {
                                 horizontalAlignment: Text.AlignHCenter
                                 verticalAlignment: Text.AlignVCenter
                             }
+
                             onClicked: {
                                 generating = true
+                                requestMessage = ""
+                                generateTimeoutTimer.restart()
                                 client.generateSystem()
                             }
                         }
 
-                        // Label { text: "JSON 上传"; font.bold: true; topPadding: 5; color: titleColor }
-
-                        // Rectangle {
-                        //     Layout.fillWidth: true
-                        //     Layout.preferredHeight: 90
-                        //     border.color: borderColor
-                        //     border.width: 1
-                        //     radius: 4
-                        //     color: dark ? "#012B31" : "#FAFAFA"
-
-                        //     TextArea {
-                        //         id: jsonArea
-                        //         anchors.fill: parent
-                        //         anchors.margins: 8
-                        //         font: mainFont
-                        //         color: titleColor
-                        //         placeholderText: "粘贴 JSON 内容（暂未实现）"
-                        //         background: null
-                        //     }
-                        // }
-
-                        // Button {
-                        //     text: "上传"
-                        //     Layout.fillWidth: true
-                        //     Layout.preferredHeight: 40
-                        //     enabled: false
-                        //     background: Rectangle { color: primaryColor; radius: 6; opacity: 0.6 }
-                        //     contentItem: Text {
-                        //         text: parent.text
-                        //         color: "white"
-                        //         font.bold: true
-                        //         horizontalAlignment: Text.AlignHCenter
-                        //         verticalAlignment: Text.AlignVCenter
-                        //     }
-                        // }
+                        Label {
+                            visible: requestMessage.length > 0
+                            text: requestMessage
+                            color: "#F56C6C"
+                            Layout.fillWidth: true
+                            wrapMode: Text.WordWrap
+                            font.pixelSize: 12
+                        }
                     }
                 }
 
-                // ==========================================
-                // 2) Right Side: Results Display
-                // ==========================================
                 ColumnLayout {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     spacing: 15
 
-                    // --- 2.1 Task Table ---
                     Rectangle {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
@@ -492,7 +479,13 @@ Item {
                                 height: 40
                                 color: headerBg
                                 radius: 8
-                                Rectangle { anchors.bottom: parent.bottom; width: parent.width; height: 10; color: headerBg }
+
+                                Rectangle {
+                                    anchors.bottom: parent.bottom
+                                    width: parent.width
+                                    height: 10
+                                    color: headerBg
+                                }
 
                                 RowLayout {
                                     anchors.fill: parent
@@ -528,15 +521,14 @@ Item {
                                         anchors.fill: parent
                                         spacing: 0
 
-                                        BodyCell { text: modelData.id;        widthRatio: 0.8 }
-                                            BodyCell { text: modelData.partition; widthRatio: 0.8 }
-                                            BodyCell { text: modelData.priority;  widthRatio: 0.8 }
-                                            BodyCell { text: modelData.critical;  widthRatio: 0.8; color: text === "HI" ? "#F56C6C" : "#67C23A"; font.bold: true }
-
-                                            BodyCell { text: modelData.period;    widthRatio: 1 }
-                                            BodyCell { text: modelData.deadline;  widthRatio: 1 }
-                                            BodyCell { text: modelData.cLow;      widthRatio: 1 }
-                                            BodyCell { text: modelData.cHigh;     widthRatio: 1 }
+                                        BodyCell { text: modelData.id; widthRatio: 0.8 }
+                                        BodyCell { text: modelData.partition; widthRatio: 0.8 }
+                                        BodyCell { text: modelData.priority; widthRatio: 0.8 }
+                                        BodyCell { text: modelData.critical; widthRatio: 0.8; color: text === "HI" ? "#F56C6C" : "#67C23A"; font.bold: true }
+                                        BodyCell { text: modelData.period; widthRatio: 1 }
+                                        BodyCell { text: modelData.deadline; widthRatio: 1 }
+                                        BodyCell { text: modelData.cLow; widthRatio: 1 }
+                                        BodyCell { text: modelData.cHigh; widthRatio: 1 }
 
                                         Item {
                                             Layout.fillHeight: true
@@ -576,7 +568,6 @@ Item {
                         }
                     }
 
-                    // --- 2.2 Resource Overview ---
                     Rectangle {
                         Layout.fillWidth: true
                         Layout.preferredHeight: 240
@@ -599,6 +590,7 @@ Item {
 
                                     Repeater {
                                         model: client.resources
+
                                         delegate: Rectangle {
                                             width: 50
                                             height: 46
@@ -614,6 +606,7 @@ Item {
                                             ColumnLayout {
                                                 anchors.centerIn: parent
                                                 spacing: 0
+
                                                 Text {
                                                     text: "R" + modelData.id
                                                     font.pixelSize: 13
@@ -621,6 +614,7 @@ Item {
                                                     color: parent.parent.isHi ? "white" : "#333"
                                                     Layout.alignment: Qt.AlignHCenter
                                                 }
+
                                                 Text {
                                                     text: modelData.cslLow + "/" + modelData.cslHigh
                                                     font.pixelSize: 9
@@ -644,6 +638,7 @@ Item {
 
                                     Repeater {
                                         model: client.resources
+
                                         delegate: Item {
                                             width: 50
                                             height: 30
@@ -675,6 +670,7 @@ Item {
 
                                     Repeater {
                                         model: client.coreCount
+
                                         delegate: Rectangle {
                                             width: 50
                                             height: 36
@@ -704,22 +700,19 @@ Item {
         }
     }
 
-    // ===== Busy overlay =====
     Rectangle {
         anchors.fill: parent
         color: "black"
         opacity: generating ? 0.15 : 0
         visible: generating
     }
+
     BusyIndicator {
         anchors.centerIn: parent
         running: generating
         visible: generating
     }
 
-    // ==========================================
-    // Helper Components (保持原输入方式)
-    // ==========================================
     component InputRow : RowLayout {
         property string label
         property int value

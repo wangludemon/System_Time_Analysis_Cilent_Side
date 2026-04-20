@@ -36,12 +36,17 @@ class RtaClient : public QObject
     Q_PROPERTY(QString allocation READ allocation WRITE setAllocation NOTIFY paramsChanged)
     Q_PROPERTY(QString priority READ priority WRITE setPriority NOTIFY paramsChanged)
 
-    // rta 结果
+    // === RTA 结果 ===
     Q_PROPERTY(QVariantList analysisResults READ analysisResults NOTIFY analysisResultsChanged)
     Q_PROPERTY(bool analysisSchedulable READ analysisSchedulable NOTIFY analysisSchedulableChanged)
     Q_PROPERTY(QString analysisMethod READ analysisMethod NOTIFY analysisMetaChanged)
     Q_PROPERTY(QString analysisReason READ analysisReason NOTIFY analysisMetaChanged)
     Q_PROPERTY(QString analysisSystemMode READ analysisSystemMode NOTIFY analysisMetaChanged)
+
+    // === 新增：后端服务器配置 ===
+    Q_PROPERTY(QString serverIp READ serverIp WRITE setServerIp NOTIFY serverConfigChanged)
+    Q_PROPERTY(int serverPort READ serverPort WRITE setServerPort NOTIFY serverConfigChanged)
+    Q_PROPERTY(QString baseUrl READ baseUrl NOTIFY serverConfigChanged)
 
 public:
     explicit RtaClient(QObject *parent = nullptr);
@@ -63,7 +68,16 @@ public:
     QString allocation() const { return m_allocation; }
     QString priority() const { return m_priority; }
 
-    QString analysisReason() const { return m_analysisReason; } // ✅ 新增 getter
+    QString analysisReason() const { return m_analysisReason; }
+    QVariantList analysisResults() const { return m_analysisResults; }
+    bool analysisSchedulable() const { return m_analysisSchedulable; }
+    QString analysisMethod() const { return m_analysisMethod; }
+    QString analysisSystemMode() const { return m_analysisSystemMode; }
+
+    // === 新增：后端服务器配置 Getter ===
+    QString serverIp() const { return m_serverIp; }
+    int serverPort() const { return m_serverPort; }
+    QString baseUrl() const { return m_baseUrl; }
 
     // Setters
     void setCoreCount(int v) { if(m_coreCount!=v) { m_coreCount=v; emit paramsChanged(); } }
@@ -79,15 +93,13 @@ public:
     void setAllocation(QString v) { if(m_allocation!=v) { m_allocation=v; emit paramsChanged(); } }
     void setPriority(QString v) { if(m_priority!=v) { m_priority=v; emit paramsChanged(); } }
 
+    // === 新增：后端服务器配置 Setter ===
+    void setServerIp(const QString &ip);
+    void setServerPort(int port);
+
     // === 功能函数 ===
     Q_INVOKABLE void generateSystem();
-
     Q_INVOKABLE void analyze(const QString &method, const QString &systemMode);
-
-    QVariantList analysisResults() const { return m_analysisResults; }
-    bool analysisSchedulable() const { return m_analysisSchedulable; }
-    QString analysisMethod() const { return m_analysisMethod; }
-    QString analysisSystemMode() const { return m_analysisSystemMode; }
 
 signals:
     void dataChanged();
@@ -100,6 +112,9 @@ signals:
     void analysisSchedulableChanged();
     void analysisMetaChanged();
 
+    // === 新增：服务器配置变更信号 ===
+    void serverConfigChanged();
+
 private slots:
     void onReplyFinished(QNetworkReply *reply);
 
@@ -110,7 +125,7 @@ private:
     QJsonArray m_tasks;
     QJsonArray m_resources;
 
-    // Default Params (参考 JavaFX 截图中的默认值)
+    // Default Params
     int m_coreCount = 4;
     int m_taskNum = 16;
     double m_utilization = 2.0;
@@ -130,9 +145,12 @@ private:
     bool m_analysisSchedulable = false;
     QString m_analysisMethod;
     QString m_analysisSystemMode;
-    QString m_analysisReason;   // ✅ 新增成员变量
+    QString m_analysisReason;
 
-    QString m_baseUrl = "http://127.0.0.1:8080/api"; // 配置后端运行地址
+    // === 新增：后端服务器配置 ===
+    QString m_serverIp = "127.0.0.1";
+    int m_serverPort = 8080;
+    QString m_baseUrl = "http://127.0.0.1:8080/api";
 };
 
 #endif // RTACLIENT_H

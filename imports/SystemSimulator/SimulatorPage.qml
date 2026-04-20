@@ -3,7 +3,8 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Shapes 1.15
 import SystemSimulator 1.0
-
+import QtCore
+import VirtualMachine
 Item {
     // width: 1920
     // height: 1080
@@ -22,7 +23,14 @@ Item {
     // 1. C++ 后端实例
     SimulationClient {
         id: client
-        onErrorOccurred: (msg) => console.error("Backend Error: " + msg)
+        //onErrorOccurred: (msg) => console.error("Backend Error: " + msg)
+        serverIp: AppSettings.serverIp
+            serverPort: AppSettings.serverPort
+            onErrorOccurred: (msg) => console.error("Backend Error: " + msg)
+            Component.onCompleted: {
+                    console.log("SimulatorPage AppSettings.serverIp =", AppSettings.serverIp)
+                    console.log("SimulatorPage client.baseUrl =", client.baseUrl)
+                }
     }
 
     // 2. ✅ 新增：配置参数弹窗 (实例化 ConfigDialog.qml)

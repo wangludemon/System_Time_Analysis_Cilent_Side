@@ -25,7 +25,7 @@ class SimulationClient : public QObject
     Q_PROPERTY(bool mrspResult READ mrspResult NOTIFY dataChanged)
     Q_PROPERTY(bool pwlpResult READ pwlpResult NOTIFY dataChanged)
 
-    // === ✅ 配置参数 ===
+    // === 配置参数 ===
     Q_PROPERTY(int cpuCoreCount READ cpuCoreCount WRITE setCpuCoreCount NOTIFY configChanged)
     Q_PROPERTY(int taskNumPerCore READ taskNumPerCore WRITE setTaskNumPerCore NOTIFY configChanged)
     Q_PROPERTY(int minPeriod READ minPeriod WRITE setMinPeriod NOTIFY configChanged)
@@ -33,7 +33,7 @@ class SimulationClient : public QObject
     Q_PROPERTY(int maxAccess READ maxAccess WRITE setMaxAccess NOTIFY configChanged)
     Q_PROPERTY(double resourceRatio READ resourceRatio WRITE setResourceRatio NOTIFY configChanged)
 
-    // --- ✅ 新增：资源类型和资源个数 ---
+    // --- 资源类型和资源个数 ---
     Q_PROPERTY(QString resourceType READ resourceType WRITE setResourceType NOTIFY configChanged)
     Q_PROPERTY(QString resourceCount READ resourceCount WRITE setResourceCount NOTIFY configChanged)
 
@@ -42,6 +42,11 @@ class SimulationClient : public QObject
     Q_PROPERTY(bool isAutoSwitch READ isAutoSwitch WRITE setIsAutoSwitch NOTIFY configChanged)
 
     Q_PROPERTY(QString algorithm READ algorithm WRITE setAlgorithm NOTIFY configChanged)
+
+    // === 新增：后端服务器配置 ===
+    Q_PROPERTY(QString serverIp READ serverIp WRITE setServerIp NOTIFY serverConfigChanged)
+    Q_PROPERTY(int serverPort READ serverPort WRITE setServerPort NOTIFY serverConfigChanged)
+    Q_PROPERTY(QString baseUrl READ baseUrl NOTIFY serverConfigChanged)
 
 public:
     explicit SimulationClient(QObject *parent = nullptr);
@@ -75,7 +80,6 @@ public:
     double resourceRatio() const { return m_resourceRatio; }
     void setResourceRatio(double d) { if(!qFuzzyCompare(m_resourceRatio, d)){m_resourceRatio=d; emit configChanged();} }
 
-    // --- ✅ 新增 Getter/Setter ---
     QString resourceType() const { return m_resourceType; }
     void setResourceType(const QString &val) { if(m_resourceType!=val){m_resourceType=val; emit configChanged();} }
 
@@ -91,6 +95,14 @@ public:
     QString algorithm() const { return m_algorithm; }
     void setAlgorithm(const QString &a) { if(m_algorithm!=a){m_algorithm=a; emit configChanged();} }
 
+    // === 新增：后端服务器配置 Getter / Setter ===
+    QString serverIp() const { return m_serverIp; }
+    int serverPort() const { return m_serverPort; }
+    QString baseUrl() const { return m_baseUrl; }
+
+    void setServerIp(const QString &ip);
+    void setServerPort(int port);
+
     // === 功能函数 ===
     Q_INVOKABLE void sendSimulationRequest();
     Q_INVOKABLE void getProtocolData(QString protocolName);
@@ -100,6 +112,9 @@ signals:
     void dataChanged();
     void configChanged();
     void errorOccurred(QString errorMsg);
+
+    // === 新增：服务器配置变更信号 ===
+    void serverConfigChanged();
 
 private slots:
     void onReplyFinished(QNetworkReply *reply);
@@ -124,7 +139,6 @@ private:
     int m_maxAccess = 2;
     double m_resourceRatio = 0.5;
 
-    // ✅ 新增配置默认值
     QString m_resourceType = "Short Length";
     QString m_resourceCount = "Partitions";
 
@@ -132,7 +146,10 @@ private:
     bool m_isAutoSwitch = false;
     QString m_algorithm = "MSRP";
 
-    QString m_baseUrl = "http://127.0.0.1:8080/api";  // 配置后端运行地址
+    // === 新增：后端服务器配置 ===
+    QString m_serverIp = "127.0.0.1";
+    int m_serverPort = 8080;
+    QString m_baseUrl = "http://127.0.0.1:8080/api";
 };
 
 #endif // SIMULATIONCLIENT_H

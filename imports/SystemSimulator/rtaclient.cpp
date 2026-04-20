@@ -5,6 +5,41 @@ RtaClient::RtaClient(QObject *parent) : QObject{parent}
 {
     m_manager = new QNetworkAccessManager(this);
     connect(m_manager, &QNetworkAccessManager::finished, this, &RtaClient::onReplyFinished);
+
+    // 根据默认 IP / 端口初始化 baseUrl
+    m_baseUrl = QString("http://%1:%2/api").arg(m_serverIp).arg(m_serverPort);
+
+    qDebug() << "RtaClient initialized, baseUrl =" << m_baseUrl;
+}
+
+// === 新增：设置服务器 IP ===
+void RtaClient::setServerIp(const QString &ip)
+{
+    if (m_serverIp == ip)
+        return;
+
+    m_serverIp = ip;
+    m_baseUrl = QString("http://%1:%2/api").arg(m_serverIp).arg(m_serverPort);
+
+    qDebug() << "RtaClient server IP updated:" << m_serverIp
+             << ", baseUrl =" << m_baseUrl;
+
+    emit serverConfigChanged();
+}
+
+// === 新增：设置服务器端口 ===
+void RtaClient::setServerPort(int port)
+{
+    if (m_serverPort == port)
+        return;
+
+    m_serverPort = port;
+    m_baseUrl = QString("http://%1:%2/api").arg(m_serverIp).arg(m_serverPort);
+
+    qDebug() << "RtaClient server port updated:" << m_serverPort
+             << ", baseUrl =" << m_baseUrl;
+
+    emit serverConfigChanged();
 }
 
 void RtaClient::generateSystem()
@@ -23,11 +58,12 @@ void RtaClient::generateSystem()
     json["allocation"] = m_allocation;
     json["priority"] = m_priority;
 
-    // 根据你的 Controller 路径
     QNetworkRequest request(QUrl(m_baseUrl + "/rta/generateSystem"));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
+    qDebug() << "Generating System to:" << request.url().toString();
     qDebug() << "Generating System params:" << json;
+
     m_manager->post(request, QJsonDocument(json).toJson());
 }
 
@@ -56,15 +92,16 @@ void RtaClient::onReplyFinished(QNetworkReply *reply)
         m_resources = QJsonArray();
     }
 
-    qDebug() << "System Generated. Tasks:" << m_tasks.size() << "Resources:" << m_resources.size();
+    qDebug() << "System Generated. Tasks:" << m_tasks.size()
+             << "Resources:" << m_resources.size();
 
     emit dataChanged();
     emit requestFinished(true, "Success");
     reply->deleteLater();
 }
 
-void RtaClient::analyze(const QString &method, const QString &systemMode) {
-    // POST http://127.0.0.1:8080/api/rta/analyze
+void RtaClient::analyze(const QString &method, const QString &systemMode)
+{
     QUrl url(m_baseUrl + "/rta/analyze");
 
     QNetworkRequest req(url);
@@ -73,6 +110,9 @@ void RtaClient::analyze(const QString &method, const QString &systemMode) {
     QJsonObject body;
     body["method"] = method;
     body["systemMode"] = systemMode;
+
+    qDebug() << "Analyze request to:" << req.url().toString();
+    qDebug() << "Analyze body:" << body;
 
     QNetworkReply *reply = m_mgr.post(req, QJsonDocument(body).toJson());
 
@@ -110,7 +150,9 @@ void RtaClient::analyze(const QString &method, const QString &systemMode) {
         m_analysisResults.clear();
         QJsonArray arr = root.value("results").toArray();
         for (const QJsonValue &v : arr) {
-            if (v.isObject()) m_analysisResults.append(v.toObject().toVariantMap());
+            if (v.isObject()) {
+                m_analysisResults.append(v.toObject().toVariantMap());
+            }
         }
         emit analysisResultsChanged();
 

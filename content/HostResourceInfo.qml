@@ -6,6 +6,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
 import VirtualMachine
+import QtCore
 
 Rectangle {
     id: root
@@ -43,6 +44,7 @@ Rectangle {
                 Layout.fillWidth: true
                 placeholderText: "Enter IP Address (e.g., 192.168.1.1)"
                 text: "192.168.1.14"
+                //text: AppSettings.serverIp  // 更改为全局的IP  在AppSetting.qml中
                 focus: true
                 validator: RegularExpressionValidator {
                     // 简单的IP地址格式验证
@@ -84,7 +86,10 @@ Rectangle {
                 onClicked: {
                     if (ipInput.acceptableInput) {
                         root.buttonStatus = "processing";
-                        networkManager.connectToServer(ipInput.text);
+                        //networkManager.connectToServer(ipInput.text);
+                        AppSettings.serverIp = ipInput.text
+                        AppSettings.serverPort = 8080
+                        networkManager.connectToServer(ipInput.text)
                     } else {
                         showErrorDialog("请输入有效的IP地址！");
                     }
